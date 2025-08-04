@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "category": "fashion",
+    "section": "PREMIUMCUTLERY",
+    "type": "Cutlery Sets",
+    "name": "Artic 24 Pcs Set",
+    "gender": "",
+    "new": true,
+    "sale": true,
+    "rate": 4,
+    "price": 4203.0,
+    "originPrice": 4670.0,
+    "brand": "gucci",
+    "sold": 12,
+    "quantity": 100,
+    "quantityPurchase": 1,
+    "sizes": ["S", "M", "L", "XL"],
+    "tags": "24 Pcs Cutlery Set, Cutlery, Cutlery Sets, Gift Sets, Home",
+    "sectionCategory": "Cutlery Sets, Cutlery Sets",
+    "sku": "SC-AC-TNG-24LB",
+    "variation": [
+      {
+        "color": "red",
+        "colorCode": "#DB4444",
+        "colorImage": "/images/product/color/48x48.png",
+        "image": "https://www.shapesproducts.in/wp-content/uploads/2023/11/34-Pcs-Gold-Satin-Cutlery-Set.jpeg"
+      },
+      {
+        "color": "yellow",
+        "colorCode": "#ECB018",
+        "colorImage": "/images/product/color/48x48.png",
+        "image": "https://www.shapesproducts.in/wp-content/uploads/2023/11/34-Pcs-Gold-Satin-Cutlery-Set.jpeg"
+      }
+    ],
+    "thumbImage": [
+      "https://www.shapesproducts.in/wp-content/uploads/2021/10/SC-AC-TNG-24LB-1.jpg",
+      "https://www.shapesproducts.in/wp-content/uploads/2021/10/SC-AC-TNG-24LB-2.jpg"
+    ],
+    "images": [
+      "/images/product/1000x1000.png",
+      "/images/product/1000x1000.png",
+      "/images/product/1000x1000.png",
+      "/images/product/1000x1000.png"
+    ],
+    "urlimages": [
+      "https://www.shapesproducts.in/wp-content/uploads/2021/10/SC-AC-TNG-24LB-2.jpg",
+      "https://www.shapesproducts.in/wp-content/uploads/2021/10/SC-AC-TNG-24LB-2.jpg",
+      "https://www.shapesproducts.in/wp-content/uploads/2021/10/SC-AC-TNG-24LB-2.jpg",
+      "https://www.shapesproducts.in/wp-content/uploads/2021/10/SC-AC-TNG-24LB-2.jpg"
+    ],
+    "description": "Shapes Artic Titanium Coated Gold Stainless Steel Cutlery Set of Spoons, Forks and Knives with Gift Box, Set of 24 Pcs. (Contains: 6 Dinner Spoons, 6 Dinner Forks, 6 Dinner Knives & 6 Tea Spoons with Gift Box).",
+    "action": "quick shop",
+    "slug": "mesh-shirt"
+  },
+  {
+    "id": "1",
+    "category": "fashion",
+    "section": "PREMIUMCUTLERY",
+    "type": "Cutlery Sets",
+    "name": "Aura 18 Pcs Set",
+    "gender": "",
+    "new": true,
+    "sale": true,
+    "rate": 4,
+    "price": 4878.0,
+    "originPrice": 5420.0,
+    "brand": "gucci",
+    "sold": 12,
+    "quantity": 100,
+    "quantityPurchase": 1,
+    "sizes": ["S", "M", "L", "XL"],
+    "tags": "18 Pcs Set, Cutlery, Cutlery Sets, Gift Sets, Home",
+    "sectionCategory": "Cutlery Sets, Cutlery Sets",
+    "sku": "SC/AU/18",
+    "variation": [
+      {
+        "color": "red",
+        "colorCode": "#DB4444",
+        "colorImage": "/images/product/color/48x48.png",
+        "image": "https://www.shapesproducts.in/wp-content/uploads/2023/11/34-Pcs-Gold-Satin-Cutlery-Set.jpeg"
+      },
+      {
+        "color": "yellow",
+        "colorCode": "#ECB018",
+        "colorImage": "/images/product/color/48x48.png",
+        "image": "https://www.shapesproducts.in/wp-content/uploads/2023/11/34-Pcs-Gold-Satin-Cutlery-Set.jpeg"
+      }
+    ],
+    "thumbImage": [
+      "https://www.shapesproducts.in/wp-content/uploads/2021/10/SC-AU-18-1.jpg",
+      "https://www.shapesproducts.in/wp-content/uploads/2021/10/SC-AU-18-2.jpg"
+    ],
+    "images": [
+      "/images/product/1000x1000.png",
+      "/images/product/1000x1000.png",
+      "/images/product/1000x1000.png",
+      "/images/product/1000x1000.png"
+    ],
+    "urlimages": [
+      "https://www.shapesproducts.in/wp-content/uploads/2021/10/SC-AU-18-2.jpg",
+      "https://www.shapesproducts.in/wp-content/uploads/2021/10/SC-AU-18-2.jpg",
+      "https://www.shapesproducts.in/wp-content/uploads/2021/10/SC-AU-18-2.jpg",
+      "https://www.shapesproducts.in/wp-content/uploads/2021/10/SC-AU-18-2.jpg"
+    ],
+    "description": " Shapes Aura Cutlery Set of Spoons, Forks and Tea Spoons with Gift Box, Set of 18 Pcs. (Contains: 6 Dinner Spoons, 6 Dinner Forks & 6 Tea Spoons with a Box) | Stylish Cutlery Set for Dining Table.",
+    "action": "quick shop",
+    "slug": "mesh-shirt"
+  }
+]
