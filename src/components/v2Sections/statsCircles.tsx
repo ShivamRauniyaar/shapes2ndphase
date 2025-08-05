@@ -1,18 +1,30 @@
-// components/StatsCircles.tsx
 
 const StatsCircles = () => {
   const stats = [
     {
       number: "1000+",
-      text: ["luxury hospitality", "brand’s trust"],
+      text: (
+        <span>
+          luxury hospitiality
+          <br /> brand's trust{" "}
+        </span>
+      ),
     },
     {
       number: "25+",
-      text: ["countries", "spanning"],
+      text: (
+        <span>
+          countries <br /> spanning
+        </span>
+      ),
     },
     {
       number: "100+",
-      text: ["cities in India", "spanning"],
+      text: (
+        <span>
+          cities in india <br /> spanning
+        </span>
+      ),
     },
   ];
 
@@ -22,16 +34,10 @@ const StatsCircles = () => {
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="w-[14rem] h-[14rem] rounded-full border border-[#b9975b] bg-transparent flex flex-col justify-center items-center z-10"
+            className="w-[170px] h-[170px] rounded-full border border-[#b9975b] bg-transparent flex flex-col justify-center items-center z-10"
           >
-            <h2 className="text-2xl font-semibold text-black">{stat.number}</h2>
-            <p className="text-center text-sm text-gray-700 leading-tight">
-              {stat.text.map((line, i) => (
-                <span key={i} className="block">
-                  {line}
-                </span>
-              ))}
-            </p>
+            <h2 className="stats_heading">{stat.number}</h2>
+            <p className="text-center">{stat.text}</p>
           </div>
         ))}
       </div>

@@ -59,7 +59,7 @@ const ExploreRangeCmp = () => {
             key={index}
             className="container_overlay_section"
             style={{
-              backgroundImage: `url(/images/newimages/containerfram.svg`,
+              backgroundImage: `url(/images/newimages/containerfram.svg)`,
               backgroundSize: "auto", // Changed to 'contain'
               backgroundPosition: "center", // Center the image
               backgroundRepeat: "no-repeat",

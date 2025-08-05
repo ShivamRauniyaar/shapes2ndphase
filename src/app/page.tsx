@@ -1,23 +1,18 @@
 import React from "react";
 import SliderOne from "@/components/Slider/SliderOne";
-import WhatNewOne from "@/components/Home1/WhatNewOne";
 import Inner from "@/components/PageTransition/inner";
 import { SHAPES_CMS_URL } from "../../Constant";
 import V2BreadCrumb from "@/components/v2Sections/BreadCrumb";
 import ExploreRangeCmp from "@/components/v2Sections/ExploreRangeCmp";
-import VideoTutorial from "@/components/banner/VideoTutorial";
-import ProcessCmp2 from "@/components/process/Process2";
 import blogData from "@/data/Blog.json";
 import BlogItem1 from "@/components/Blog/BlogItem1";
-import Link from "next/link";
 import ScrollAnimationComponent from "@/components/AnimatedComponents/SlowlyPopped";
-import RangeSlider from "@/components/AnimatedComponents/RangeSlider";
 import ParallaxImage from "@/components/AnimatedComponents/ParallaxImage";
-import RightSectionHoveredSection from "@/components/AnimatedComponents/Rightsection";
 import ServicesSection from "@/components/v2Sections/ImageCorrusel";
 import PartnerSection from "@/components/v2Sections/PartnerSection";
 import MultiLevelImageWithText from "@/components/v2Sections/MultiLevelImageWithText";
 import EnquiryForm from "@/components/v2Sections/contactSection";
+import StickyScrollText from "@/components/AnimatedComponents/StuckTextAnimation";
 
 async function HomeSectionDataApi() {
   const res = await fetch(`${SHAPES_CMS_URL}Homepage`, {
@@ -65,7 +60,7 @@ export default async function Home() {
       <ScrollAnimationComponent children={V2BreadCrumb()} />
       <ScrollAnimationComponent children={ExploreRangeCmp()} />
       <ParallaxImage />
-      <RightSectionHoveredSection />
+      <StickyScrollText />
       <ScrollAnimationComponent children={<ServicesSection />} />
       <ScrollAnimationComponent children={<PartnerSection />} />
       <ParallaxImage />

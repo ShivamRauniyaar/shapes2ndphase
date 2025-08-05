@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Instrument_Sans } from "next/font/google";
 import "@/styles/styles.scss";
 import GlobalProvider from "./GlobalProvider";
 import ModalCart from "@/components/Modal/ModalCart";
@@ -9,7 +8,6 @@ import ModalQuickview from "@/components/Modal/ModalQuickview";
 import ModalCompare from "@/components/Modal/ModalCompare";
 import CountdownTimeType from "@/type/CountdownType";
 import { countdownTime } from "@/store/countdownTime";
-import TopNavOne from "@/components/Header/TopNav/TopNavOne";
 import MenuServer from "@/components/Header/MenuServer/MenuServer";
 import Footer from "@/components/Footer/Footer";
 import { ToastContainer } from "react-toastify";
