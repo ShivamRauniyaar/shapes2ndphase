@@ -14,6 +14,10 @@ import ScrollAnimationComponent from "@/components/AnimatedComponents/SlowlyPopp
 import RangeSlider from "@/components/AnimatedComponents/RangeSlider";
 import ParallaxImage from "@/components/AnimatedComponents/ParallaxImage";
 import RightSectionHoveredSection from "@/components/AnimatedComponents/Rightsection";
+import ServicesSection from "@/components/v2Sections/ImageCorrusel";
+import PartnerSection from "@/components/v2Sections/PartnerSection";
+import MultiLevelImageWithText from "@/components/v2Sections/MultiLevelImageWithText";
+import EnquiryForm from "@/components/v2Sections/contactSection";
 
 async function HomeSectionDataApi() {
   const res = await fetch(`${SHAPES_CMS_URL}Homepage`, {
@@ -62,64 +66,25 @@ export default async function Home() {
       <ScrollAnimationComponent children={ExploreRangeCmp()} />
       <ParallaxImage />
       <RightSectionHoveredSection />
-
-      <ProcessCmp2 />
-      <WhatNewOne />
-      <VideoTutorial />
-      <div className="register-block md:py-20 py-10">
-        <div className="container">
-          <div className="content-main flex gap-y-8 max-md:flex-col">
-            <div className="left md:w-[70%] w-full lg:pr-[60px] md:pr-[40px] ">
-              <div className="heading4">Drop Us A Line</div>
-              <div className="">
-                Use the form below to get in touch with the sales team
+      <ScrollAnimationComponent children={<ServicesSection />} />
+      <ScrollAnimationComponent children={<PartnerSection />} />
+      <ParallaxImage />
+      <ScrollAnimationComponent children={<MultiLevelImageWithText />} />
+      <ScrollAnimationComponent children={<EnquiryForm />} />
+      <ScrollAnimationComponent
+        children={
+          <div className="blog grid md:py-20 py-10">
+            <div className="container">
+              <h3 className="text-center mb-[2rem]">Blogs</h3>
+              <div className="list-blog grid lg:grid-cols-3 sm:grid-cols-2 md:gap-[42px] gap-8">
+                {blogData?.slice(0, 3)?.map((item) => (
+                  <BlogItem1 key={item.id} data={item} type="style-one" />
+                ))}
               </div>
-
-              <form className="md:mt-7 mt-4 grid grid-cols-2 gap-2">
-                <div className="email ">
-                  <input
-                    className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
-                    id="username"
-                    type="text"
-                    placeholder="Your Name"
-                    required
-                  />
-                </div>
-                <div className="email ">
-                  <input
-                    className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
-                    id="username"
-                    type="email"
-                    placeholder="Your Email"
-                    required
-                  />
-                </div>
-                <div className="col-span-2">
-                  {" "}
-                  <textarea
-                    className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
-                    id="username"
-                    placeholder="Your Message"
-                    required
-                  />
-                </div>
-                <div className="block-button md:mt-7 mt-4">
-                  <button className="button-main">Send Message</button>
-                </div>
-              </form>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="blog grid md:py-20 py-10">
-        <div className="container">
-          <div className="list-blog grid lg:grid-cols-3 sm:grid-cols-2 md:gap-[42px] gap-8">
-            {blogData?.slice(0, 3)?.map((item) => (
-              <BlogItem1 key={item.id} data={item} type="style-one" />
-            ))}
-          </div>
-        </div>
-      </div>
+        }
+      />
     </>
   );
 }
