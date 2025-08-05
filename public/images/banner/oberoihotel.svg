@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="300" viewBox="0 0 500 300">
   <defs>
-    <clipPath id="clip-path">
+    <clipPath id="clipPath">
       <rect id="Rectangle_22" data-name="Rectangle 22" width="326.293" height="198.111" fill="none"/>
     </clipPath>
     <clipPath id="clip-Hotels_Resorts">
       <rect width="500" height="300"/>
     </clipPath>
   </defs>
-  <g id="Hotels_Resorts" data-name="Hotels &amp; Resorts" clip-path="url(#clip-Hotels_Resorts)">
+  <g id="Hotels_Resorts" data-name="Hotels &amp; Resorts" clipPath="url(#clip-Hotels_Resorts)">
     <rect width="500" height="300" fill="#fff"/>
     <g id="Group_38" data-name="Group 38" transform="translate(87 51)">
-      <g id="Group_37" data-name="Group 37" clip-path="url(#clip-path)">
+      <g id="Group_37" data-name="Group 37" clipPath="url(#clipPath)">
         <path id="Path_661" data-name="Path 661" d="M152.678,37.873a35.368,35.368,0,0,0,9.287,4.833,37.045,37.045,0,0,1,7.706-2.584,36.591,36.591,0,0,1,17.727.522,35.9,35.9,0,0,0-34.721-2.771" transform="translate(-16.497 -3.744)" fill="#d6b04b"/>
         <path id="Path_662" data-name="Path 662" d="M164.4,53.678a37.015,37.015,0,0,1,6.253-5.193,36.6,36.6,0,0,1,16.718-5.919A35.9,35.9,0,0,0,154,52.526,35.35,35.35,0,0,0,164.4,53.678" transform="translate(-16.64 -4.508)" fill="#d6b04b"/>
         <path id="Path_663" data-name="Path 663" d="M225.323,65.891a35.319,35.319,0,0,0-5.356-9,37.037,37.037,0,0,1-7.912-1.857,36.583,36.583,0,0,1-14.8-9.769,35.891,35.891,0,0,0,28.07,20.622" transform="translate(-21.314 -4.891)" fill="#d6b04b"/>

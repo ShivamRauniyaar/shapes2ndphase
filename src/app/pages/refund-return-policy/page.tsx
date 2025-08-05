@@ -7,7 +7,7 @@ const ReturnRefundPolicy = () => {
       <div id="header" className="relative w-full">
         <Breadcrumb heading="Return & Refund" subHeading="Return & Refund" />
       </div>
-      <div className="bg-gray-100 min-h-screen py-8">
+      <div className="bg-gray-100  py-8">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold mb-4">Return & Refund</h1>
 

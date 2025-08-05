@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +10,6 @@ import axios from "axios";
 import { useModalCartContext } from "@/context/ModalCartContext";
 import { useCart } from "@/context/CartContext";
 import { SHAPES_API_URL } from "../../../../Constant";
-import { title } from "process";
 import { CommonSvg } from "@/Common/CommonSvg";
 
 interface Props {
@@ -790,10 +788,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
               <i className="icon-category text-2xl"></i>
             </div>
             <div className=" flex justify-between w-[100%] items-center gap-16">
-              <Link
-                href={"/"}
-                className="flex items-center max-lg:absolute max-lg:left-1/2 max-lg:-translate-x-1/2"
-              >
+              <div className="flex items-center max-lg:absolute max-lg:left-1/2 max-lg:-translate-x-1/2">
                 <div className="heading4 flex gap-8 items-center">
                   <Image
                     src={"/images/homepage/ShapesLogo.png"}
@@ -826,9 +821,6 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                               >
                                 {item?.title}
                               </div>
-                              {/* <div className="sub-menu py-3 px-5 -left-10 w-max absolute grid grid-cols-1 gap-5 bg-white rounded-b-xl">
-                            
-                              </div> */}
                             </li>
                           ) : (
                             <li className="h-full" key={index}>
@@ -855,45 +847,6 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                                                 <div className="text-button-uppercase pb-2">
                                                   {_item?.title}
                                                 </div>
-                                                {/* <ul>
-                                              {(expandedCategories[index]
-                                                ? _item?.Subcategory
-                                                : (
-                                                    _item?.Subcategory ?? []
-                                                  ).slice(0, 4)
-                                              ).map((_insideValue: any) => (
-                                                <li key={_insideValue?.value}>
-                                                  <div
-                                                    onClick={() =>
-                                                      handleGenderClick(
-                                                        _item?.category?.value,
-                                                        _insideValue?.value,
-
-                                                        _item?.title
-                                                      )
-                                                    }
-                                                    className="link text-secondary cursor-pointer"
-                                                  >
-                                                    {_insideValue?.label}
-                                                  </div>
-                                                </li>
-                                              ))}
-                                              {_item?.Subcategory?.length >
-                                                4 && (
-                                                <li>
-                                                  <div
-                                                    onClick={() =>
-                                                      toggleViewAll(index)
-                                                    }
-                                                    className="link text-secondary cursor-pointer font-bold"
-                                                  >
-                                                    {expandedCategories[index]
-                                                      ? "Show Less"
-                                                      : "View All"}
-                                                  </div>
-                                                </li>
-                                              )}
-                                            </ul> */}
                                               </div>
                                             )
                                           )}
@@ -901,9 +854,8 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                                       </div>
                                       <div className="col-span-2 vertical_layout_pipe p-2">
                                         <div className="grid grid-cols-2 gap-2">
-                                          {item?.blogs?.map((item: any) => (
-                                            <div>
-                                              {" "}
+                                          {item?.blogs?.map((item: any, index: number) => (
+                                            <div key={index}>
                                               <div>
                                                 {CommonSvg.frameSvgIcon}
                                               </div>
@@ -925,7 +877,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                     </ul>
                   </div>
                 </div>
-              </Link>
+              </div>
               <div className="menu-main h-full flex justify-center max-lg:hidden">
                 <div className="flex justify-between items-center w-full">
                   <ul className="flex justify-between w-[100%] items-center gap-8 h-full">
@@ -1053,135 +1005,6 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                     )}
                   </ul>
                 </div>
-                {/* <ul className="flex justify-between w-[100%] items-center gap-8 h-full">
-                  {hardcodeDynamicData?.[0]?.content?.map(
-                    (item: any, index: number) =>
-                      item?.children?.length === 0 ? (
-                        <li className="h-full relative" key={index}>
-                          <Link
-                            href={item?.Url}
-                            className={`text-button-uppercase duration-300 h-full flex items-center justify-center ${
-                              pathname.includes(item?.Url) ? "active" : ""
-                            }`}
-                          >
-                            {item?.title}
-                          </Link>
-                        </li>
-                      ) : item?.children?.[0]?.children?.length === 0 ? (
-                        <li className="h-full relative" key={index}>
-                          <div
-                            className={`text-button-uppercase duration-300 h-full flex items-center justify-center gap-1 ${
-                              pathname === item?.Url ? "active" : ""
-                            }`}
-                          >
-                            {item?.title}
-                          </div>
-                          <div className="sub-menu py-3 px-5 -left-10 w-max absolute grid grid-cols-1 gap-5 bg-white rounded-b-xl">
-                            <ul>
-                              {item?.children?.map(
-                                (item: any, index: number) => (
-                                  <li key={index}>
-                                    <Link
-                                      href={item?.Url}
-                                      className={`link text-secondary duration-300 ${
-                                        pathname === item?.Url ? "active" : ""
-                                      }`}
-                                    >
-                                      {item?.title}
-                                    </Link>
-                                  </li>
-                                )
-                              )}
-                            </ul>
-                          </div>
-                        </li>
-                      ) : (
-                        <li className="h-full" key={index}>
-                          <Link
-                            href="#"
-                            className={`text-button-uppercase duration-300 h-full flex items-center justify-center ${
-                              pathname.includes("/shop/") ? "active" : ""
-                            }`}
-                          >
-                            {item?.title}
-                          </Link>
-                          <div className="mega-menu absolute top-[74px] left-0 bg-white w-screen">
-                            <div className="container">
-                              <div className=" justify-between py-8">
-                                <div className="nav-link  grid grid-cols-4 gap-y-8 gap-[1rem]">
-                                  {item?.children?.map(
-                                    (_item: any, index: number) => (
-                                      <div className="nav-item" key={index}>
-                                        <div className="text-button-uppercase pb-2">
-                                          {_item?.title}
-                                        </div>
-                                        <ul>
-                                          {(expandedCategories[index]
-                                            ? _item?.Subcategory
-                                            : (_item?.Subcategory ?? []).slice(
-                                                0,
-                                                4
-                                              )
-                                          ).map((_insideValue: any) => (
-                                            <li key={_insideValue?.value}>
-                                              <div
-                                                onClick={() =>
-                                                  handleGenderClick(
-                                                    _item?.category?.value,
-                                                    _insideValue?.value,
-
-                                                    _item?.title
-                                                  )
-                                                }
-                                                className="link text-secondary cursor-pointer"
-                                              >
-                                                {_insideValue?.label}
-                                              </div>
-                                            </li>
-                                          ))}
-                                          {_item?.Subcategory?.length > 4 && (
-                                            <li>
-                                              <div
-                                                onClick={() =>
-                                                  toggleViewAll(index)
-                                                }
-                                                className="link text-secondary cursor-pointer font-bold"
-                                              >
-                                                {expandedCategories[index]
-                                                  ? "Show Less"
-                                                  : "View All"}
-                                              </div>
-                                            </li>
-                                          )}
-                                        </ul>
-                                      </div>
-                                    )
-                                  )}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                      )
-                  )}
-                  <div
-                    className="cart-icon flex items-center relative cursor-pointer"
-                    // onClick={openModalCart}
-                  >
-                    <Link href="/my-account">
-                      <Icon.User size={24} color="black" />
-                    </Link>
-                  </div>
-                  <div
-                    className="cart-icon flex items-center relative cursor-pointer"
-                    onClick={openModalCart}
-                  >
-                    <Icon.Handbag size={24} color="black" />
-                    <span className="quantity cart-quantity absolute -right-1.5 -top-1.5 text-xs text-white bg-black w-4 h-4 flex items-center justify-center rounded-full">
-                      {cartState.cartArray.length}
-                    </span>
-                  </div>
-                </ul> */}
               </div>
             </div>
           </div>

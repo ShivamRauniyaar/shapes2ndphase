@@ -35,7 +35,7 @@ const BlogItem1: React.FC<BlogProps> = ({ data, type }) => {
               className="w-full duration-500"
             />
             <div className="blog_heading mt-[1rem]">{data?.title}</div>
-            <div className="mt-[1rem] flex">Read {CommonSvg.rightIconSvg}</div>
+            <div className="mt-[1rem] flex items-center">Read {CommonSvg.rightIconSvg}</div>
           </div>
         </div>
       </div>

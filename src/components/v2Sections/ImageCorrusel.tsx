@@ -55,7 +55,7 @@ const ServicesSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 px-5 bg-amber-50 min-h-screen">
+    <section className="py-20 px-5 bg-amber-50 ">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">

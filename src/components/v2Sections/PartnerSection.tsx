@@ -80,6 +80,7 @@ const PartnerSection = () => {
       <div className="grid grid-cols-7 gap-2">
         {partnerSectionData?.map((item, index) => (
           <div
+            key={index}
             style={{
               backgroundImage: `url(${item?.image})`,
               width: "100%",

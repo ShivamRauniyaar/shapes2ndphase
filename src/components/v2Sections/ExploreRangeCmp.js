@@ -54,8 +54,9 @@ const ExploreRangeCmp = () => {
         <button className="primary_button">Enquire Now</button>
       </div>
       <div className="flex w-[100vw] gap-2 overflow-auto mt-[24px]">
-        {rangeData?.map((item) => (
+        {rangeData?.map((item, index) => (
           <div
+            key={index}
             className="container_overlay_section"
             style={{
               backgroundImage: `url(/images/newimages/containerfram.svg`,
@@ -63,10 +64,7 @@ const ExploreRangeCmp = () => {
               backgroundPosition: "center", // Center the image
               backgroundRepeat: "no-repeat",
             }}
-          >
-            {" "}
-            line no 32
-          </div>
+          ></div>
         ))}
       </div>
     </Fragment>

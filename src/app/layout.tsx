@@ -12,12 +12,10 @@ import { countdownTime } from "@/store/countdownTime";
 import TopNavOne from "@/components/Header/TopNav/TopNavOne";
 import MenuServer from "@/components/Header/MenuServer/MenuServer";
 import Footer from "@/components/Footer/Footer";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import { DeleteModal } from "@/components/Modal";
 
 const serverTimeLeft: CountdownTimeType = countdownTime();
-
-const instrument = Instrument_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Spoon, Kitchenware, Stainless Stell Cutlery Manufacturers",
@@ -50,7 +48,7 @@ export default function RootLayout({
   return (
     <GlobalProvider>
       <html lang="en">
-        <body className={instrument.className}>
+        <body>
           {/* <TopNavOne /> */}
           <div id="header" className="relative w-full">
             <MenuServer />
@@ -64,7 +62,7 @@ export default function RootLayout({
           <ModalSearch />
           <ModalQuickview />
           <ModalCompare />
-          <DeleteModal/>
+          <DeleteModal />
           <Footer />
         </body>
       </html>

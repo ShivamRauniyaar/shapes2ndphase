@@ -19,27 +19,27 @@ export const CommonSvg = {
       viewBox="0 0 24 24"
       fill="none"
     >
-      <g clip-path="url(#clip0_1047_7388)">
+      <g clipPath="url(#clip0_1047_7388)">
         <path
           d="M5 12H19"
           stroke="black"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M13 18L19 12"
           stroke="black"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M13 6L19 12"
           stroke="black"
-          stroke-width="1.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
