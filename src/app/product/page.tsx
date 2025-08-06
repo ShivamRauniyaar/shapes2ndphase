@@ -1,6 +1,15 @@
-import ShopBreadCrumbImg from "@/components/Shop/ShopBreadCrumbImg";
-import Link from "next/link";
 import { SHAPES_API_URL } from "../../../Constant";
+import { Fragment } from "react";
+import ScrollAnimationComponent from "@/components/AnimatedComponents/SlowlyPopped";
+import ProductCatalog from "@/components/v2Sections/ProductCollage";
+import MultiLevelImageWithText from "@/components/v2Sections/MultiLevelImageWithText";
+import ExploreRangeCmp from "@/components/v2Sections/ExploreRangeCmp";
+import PartnerSection from "@/components/v2Sections/PartnerSection";
+import ParallaxImage from "@/components/AnimatedComponents/ParallaxImage";
+import TextWithAccordion from "@/components/v2Sections/textWithAccordion";
+import ImageCatalog2nd from "@/components/v2Sections/Common/ImageCatalog2nd";
+import ThinBgWithText from "@/components/v2Sections/ThinBgWithText";
+import EnquiryForm from "@/components/v2Sections/contactSection";
 
 interface Props {
   searchParams?: { [key: string]: string | string[] | undefined };
@@ -26,35 +35,44 @@ export default async function ShopPage({ searchParams }: Props) {
   const page = Number(searchParams?.page) || 1;
   const { productsData } = await getProducts(page);
 
-
   return (
-    <>
-      <div id="header" className="relative w-full">
+    <Fragment>
+      <div
+        className="relative"
+        style={{
+          backgroundImage: `url(/images/newimages/productbanner2.png)`,
+          width: "100%",
+          height: "800px",
+          backgroundSize: "auto", // Changed to 'contain'
+          backgroundPosition: "center", // Center the image
+          borderRadius: "12px",
+          backgroundRepeat: "no-repeat",
+          marginTop: "5rem",
+        }}
+      >
+        <div className="absolute z-[102] top-[40%] left-[10%]">
+          <h2 className="text-white">Shapes Cutlery</h2>
+          <p className="mt-[1.5rem] text-white">
+            Elevating Hospitality, One Table at a Time
+          </p>
+          <div className="flex gap-4 mt-[1.5rem]">
+            <button className="transparent_secondary_button">
+              Download Catalog
+            </button>
+            <div className="primary_button">Enquire Now</div>
+          </div>
+        </div>
       </div>
 
-      <ShopBreadCrumbImg
-        data={productsData}
-        fetchedProduct={productsData}
-        productPerPage={10}
-        dataType={"Product"}
-      />
-
-      <div className="flex justify-center my-6 space-x-2">
-        {Array.from({ length: productsData?.length / 10 }, (_, i) => i + 1).map(
-          (p) => (
-            <Link key={p} href={`/product?page=${p}`}>
-              <button
-                className={`px-4 py-2 ${
-                  page === p ? "selectedTab" : "bg-gray-200"
-                }`}
-              >
-                {p}
-              </button>
-            </Link>
-          )
-        )}
-      </div>
-
-    </>
+      <ScrollAnimationComponent children={<ProductCatalog />} />
+      <ScrollAnimationComponent children={<MultiLevelImageWithText />} />
+      <ScrollAnimationComponent children={<ExploreRangeCmp />} />
+      <ScrollAnimationComponent children={<PartnerSection />} />
+      <ParallaxImage />
+      <ScrollAnimationComponent children={<TextWithAccordion />} />
+      <ScrollAnimationComponent children={<ImageCatalog2nd />} />
+      <ThinBgWithText />
+      <ScrollAnimationComponent children={<EnquiryForm />} />
+    </Fragment>
   );
 }

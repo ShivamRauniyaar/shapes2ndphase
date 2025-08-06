@@ -27,7 +27,7 @@ const rightSectionData = [
   },
   {
     id: 4,
-    title: "Custom Branding &s Bespoke Collection",
+    title: "Custom Branding & Bespoke Collection",
     description:
       "Personalization options for hospitality clients who want their dining identity emebedded in every experience",
   },
@@ -62,14 +62,14 @@ const StickyScrollText = () => {
         <div ref={containerRef} className="relative h-[100vh] bg-gray-100">
           <div>
             <div ref={textRef} className="h-screen   justify-center">
-              <h1 className="text-5xl font-bold ">
+              <h1>
                 Designed to Shine <br />
                 Crafter to Endure
               </h1>
-              <p className="mt-[1rem]">
-                A perfect harmony of visual elegance and lasting strength, our
-                cutlery is made to stand out in presentation and perform
-                flawlessly over time.
+              <p className="mt-[40px]">
+                A perfect harmony of visual elegance and lasting <br />
+                strength, our cutlery is made to stand out in <br />{" "}
+                presentation and perform flawlessly over time.
               </p>
             </div>
           </div>
@@ -81,9 +81,9 @@ const StickyScrollText = () => {
 
       <div className="w-[50%] grid gap-[5rem]">
         {rightSectionData?.map((item, index) => (
-          <div className="white_border pb-[80px]">
+          <div className="white_border pb-[80px]" key={index}>
             <h5>{item.title}</h5>
-            <p>{item?.description}</p>
+            <p className="mt-[1rem] text-[16px]">{item?.description}</p>
           </div>
         ))}
       </div>

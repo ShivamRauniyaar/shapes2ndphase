@@ -620,46 +620,55 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                   },
                 ],
               },
+              Url: "/product/cutlery",
             },
             {
               id: "cp2",
               title: "Chaffing Dishes",
               children: [],
+              Url: "/product/chaffing_dishes",
             },
             {
               id: "cp3",
               title: "Buffetware",
               children: [],
+              Url: "/product/buffetware",
             },
             {
               id: "cp4",
               title: "Serveware",
               children: [],
+              Url: "/product/serveware",
             },
             {
               id: "cp5",
               title: "Barware",
               children: [],
+              Url: "/product/barware",
             },
             {
               id: "cp6",
               title: "Kitchenware",
               children: [],
+              Url: "/product/kitchenware",
             },
             {
               id: "cp7",
               title: "Tools & Gadgets",
               children: [],
+              Url: "/product/Tools&Gadgets",
             },
             {
               id: "cp8",
               title: "Trolleys & Dustbin",
               children: [],
+              Url: "/product/trolleys_dustbin",
             },
             {
               id: "cp9",
               title: "Gifting Options",
               children: [],
+              Url: "/product/gifting_options",
             },
           ],
           blogs: [
@@ -840,13 +849,16 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                                         <div className="nav-link grid grid-flow-col p-2 grid-rows-4 gap-y-8 gap-[1rem]">
                                           {item?.children?.map(
                                             (_item: any, index: number) => (
-                                              <div
-                                                className="nav-item"
-                                                key={index}
-                                              >
-                                                <div className="text-button-uppercase pb-2">
-                                                  {_item?.title}
-                                                </div>
+                                              <div key={index}>
+                                                <Link
+                                                  href={item?.Url}
+                                                  className="nav-item"
+                                                  key={index}
+                                                >
+                                                  <div className="text-button-uppercase pb-2">
+                                                    {_item?.title}
+                                                  </div>
+                                                </Link>
                                               </div>
                                             )
                                           )}
@@ -854,17 +866,19 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                                       </div>
                                       <div className="col-span-2 vertical_layout_pipe p-2">
                                         <div className="grid grid-cols-2 gap-2">
-                                          {item?.blogs?.map((item: any, index: number) => (
-                                            <div key={index}>
-                                              <div>
-                                                {CommonSvg.frameSvgIcon}
+                                          {item?.blogs?.map(
+                                            (item: any, index: number) => (
+                                              <div key={index}>
+                                                <div>
+                                                  {CommonSvg.frameSvgIcon}
+                                                </div>
+                                                <div className="caption1 text-secondary text-left mt-3">
+                                                  {item?.title}
+                                                </div>
+                                                <div>Read -</div>
                                               </div>
-                                              <div className="caption1 text-secondary text-left mt-3">
-                                                {item?.title}
-                                              </div>
-                                              <div>Read -</div>
-                                            </div>
-                                          ))}
+                                            )
+                                          )}
                                         </div>
                                       </div>
                                     </div>

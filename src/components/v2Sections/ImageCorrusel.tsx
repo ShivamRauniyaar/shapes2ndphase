@@ -75,7 +75,7 @@ const ServicesSection: React.FC = () => {
           {services.map((service) => (
             <div
               key={service.id}
-              className={`relative h-96 rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 ease-out ${
+              className={`relative h-[400px] rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 ease-out ${
                 hoveredCard === service.id
                   ? "transform -translate-y-2 shadow-2xl"
                   : "hover:shadow-xl"
