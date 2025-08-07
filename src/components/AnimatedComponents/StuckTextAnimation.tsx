@@ -35,7 +35,31 @@ const rightSectionData = [
 
 gsap.registerPlugin(ScrollTrigger);
 
-const StickyScrollText = () => {
+interface StickyControlContent {
+  Data?: {
+    header1?: string;
+    header2?: string;
+    description?: string;
+    isStats?: boolean;
+    rightPartData?: Array<{
+      id?: any;
+      title?: string;
+      description?: string;
+    }>;
+  };
+}
+
+const predefinedData = {
+  header1: "Elevating Experiences",
+  header2: "Across your Property",
+  description:
+    "Designed to bring consistency, elegance, and elevated presentation to every space withing your property.",
+  isStats: true,
+  rightPartData: rightSectionData,
+};
+const StickyScrollText: React.FC<StickyControlContent> = ({
+  Data = predefinedData,
+}) => {
   const containerRef = useRef(null);
   const textRef = useRef(null);
 
@@ -55,6 +79,7 @@ const StickyScrollText = () => {
     return () => ctx.revert();
   }, []);
 
+
   return (
     <div className="container flex gap-2">
       <div className="w-[50%]">
@@ -63,24 +88,23 @@ const StickyScrollText = () => {
           <div>
             <div ref={textRef} className="h-screen   justify-center">
               <h1>
-                Designed to Shine <br />
-                Crafter to Endure
+                {Data.header1}
+                <br />
+                {Data.header2}
               </h1>
-              <p className="mt-[40px]">
-                A perfect harmony of visual elegance and lasting <br />
-                strength, our cutlery is made to stand out in <br />{" "}
-                presentation and perform flawlessly over time.
-              </p>
+              <p className="mt-[40px]">{Data.description}</p>
             </div>
           </div>
-          <div className="text-black absolute bottom-0">
-            <StatsCircles />{" "}
-          </div>
+          {Data?.isStats && (
+            <div className="text-black absolute bottom-0">
+              <StatsCircles />{" "}
+            </div>
+          )}
         </div>
       </div>
 
       <div className="w-[50%] grid gap-[5rem]">
-        {rightSectionData?.map((item, index) => (
+        {Data?.rightPartData?.map((item, index) => (
           <div className="white_border pb-[80px]" key={index}>
             <h5>{item.title}</h5>
             <p className="mt-[1rem] text-[16px]">{item?.description}</p>

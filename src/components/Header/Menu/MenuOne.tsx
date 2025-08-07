@@ -575,7 +575,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
         {
           id: "ss1",
           info: {},
-          Url: "/home",
+          Url: "/",
           title: "Home",
           Navigateselect: "URL",
           childred: [],
@@ -823,13 +823,14 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                             </li>
                           ) : !item?.isfullPopped ? (
                             <li className="h-full relative" key={index}>
-                              <div
+                              <Link
+                                href={item?.Url}
                                 className={`text-button-uppercase duration-300 h-full flex items-center justify-center gap-1 ${
                                   pathname === item?.Url ? "active" : ""
                                 }`}
                               >
                                 {item?.title}
-                              </div>
+                              </Link>
                             </li>
                           ) : (
                             <li className="h-full" key={index}>
@@ -905,18 +906,19 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                                 pathname.includes(item?.Url) ? "active" : ""
                               }`}
                             >
-                              {item?.title}
+                              {item?.title} a
                             </Link>
                           </li>
                         ) : item?.children?.[0]?.children?.length === 0 ? (
                           <li className="h-full relative" key={index}>
-                            <div
+                            <Link
+                              href={item?.Url}
                               className={`text-button-uppercase duration-300 h-full flex items-center justify-center gap-1 ${
                                 pathname === item?.Url ? "active" : ""
                               }`}
                             >
                               {item?.title}
-                            </div>
+                            </Link>
                             <div className="sub-menu py-3 px-5 -left-10 w-max absolute grid grid-cols-1 gap-5 bg-white rounded-b-xl">
                               {/* <ul>
                                   {item?.children?.map(
@@ -941,7 +943,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                         ) : (
                           <li className="h-full" key={index}>
                             <Link
-                              href="#"
+                              href={item?.Url}
                               className={`text-button-uppercase duration-300 h-full flex items-center justify-center ${
                                 pathname.includes("/shop/") ? "active" : ""
                               }`}

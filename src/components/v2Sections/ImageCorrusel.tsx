@@ -8,10 +8,22 @@ interface Service {
   secondaryImage: string;
 }
 
-const ServicesSection: React.FC = () => {
+interface ServicesSectionProps {
+  description?: string;
+  header1?: string;
+  header2?: string;
+  data?: Service[];
+}
+
+const ServicesSection: React.FC<ServicesSectionProps> = ({
+  header1 = "Where we excel—and",
+  header2 = "help you succeed",
+  description = "Our products are supplied to numerous 4- and 5-star Hotels, Restaurants, Cafes, Bars, Banquets and Catering services.",
+  data,
+}) => {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
-  const services: Service[] = [
+  const services: Service[] = data ?? [
     {
       id: "hotels",
       title: "Hotels",
@@ -54,19 +66,19 @@ const ServicesSection: React.FC = () => {
     setHoveredCard(null);
   };
 
+
   return (
     <section className="py-20 px-5 bg-amber-50 ">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2>
-            Where we excel—and
+            {header1}
             <br />
-            help you succeed
+            {header2}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Our products are supplied to numerous 4- and 5-star Hotels,
-            Restaurants, Cafes, Bars, Banquets and Catering services.
+            {description}
           </p>
         </div>
 

@@ -3,10 +3,10 @@ import { CommonSvg } from "@/Common/CommonSvg";
 import React, { Fragment, useState } from "react";
 
 // Define the type for a single accordion item
-type AccordionItem = {
-  id: number;
-  label: string;
-  content: string;
+export type AccordionItem = {
+  id?: number;
+  label?: string;
+  content?: string;
 };
 
 // Define the props type
