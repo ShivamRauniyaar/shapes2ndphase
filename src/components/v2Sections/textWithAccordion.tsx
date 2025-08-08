@@ -24,7 +24,7 @@ const TextWithAccordion: React.FC<TextAccordionData> = ({
   return (
     <Fragment>
       <div className="container">
-        <div className="flex justify-between gap-2">
+        <div className="flex justify-between gap-2 min-h-[60vh]">
           <div className="w-[50%] mt-[40px] relative">
             <h1>
               {Data?.header1}
@@ -43,7 +43,7 @@ const TextWithAccordion: React.FC<TextAccordionData> = ({
               </button>
             )}
 
-            <div className="absolute bottom-[1rem] ">
+            <div className="absolute bottom-[0rem] ">
               <StatsCircles />
             </div>
           </div>

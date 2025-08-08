@@ -11,7 +11,7 @@ const SliderOne: React.FC<{ SliderData: any }> = ({ SliderData }) => {
   return (
     <>
       <div></div>
-      <div className="slider-block style-one  xl:h-[800px] lg:h-[800px] md:h-[580px] sm:h-[500px] h-[350px] max-[420px]:h-[320px] w-full">
+      <div className="slider-block style-one  xl:h-[800px] lg:h-[800px] md:h-[580px] sm:h-[500px] h-[350px] max-[420px]:h-[320px] w-full mt-[2rem]">
         <div className="slider-main h-full w-full">
           <Swiper
             spaceBetween={0}
