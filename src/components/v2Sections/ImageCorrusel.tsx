@@ -66,9 +66,8 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
     setHoveredCard(null);
   };
 
-
   return (
-    <section className="py-20 px-5 bg-amber-50 ">
+    <section className="py-20  bg-amber-50 ">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -87,7 +86,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
           {services.map((service) => (
             <div
               key={service.id}
-              className={`relative h-[400px] rounded-xl overflow-hidden cursor-pointer shadow-lg transition-all duration-300 ease-out ${
+              className={`relative h-[400px]  overflow-hidden cursor-pointer shadow-lg transition-all duration-300 ease-out ${
                 hoveredCard === service.id
                   ? "transform -translate-y-2 shadow-2xl"
                   : "hover:shadow-xl"

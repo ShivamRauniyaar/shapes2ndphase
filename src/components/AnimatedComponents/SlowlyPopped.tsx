@@ -4,9 +4,13 @@ import { ReactNode } from "react";
 
 interface GeraxStyleAnimationsProps {
   children: ReactNode;
+  isContainer?: boolean;
 }
 
-const GeraxStyleAnimations = ({ children }: GeraxStyleAnimationsProps) => {
+const GeraxStyleAnimations = ({
+  children,
+  isContainer = true,
+}: GeraxStyleAnimationsProps) => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -34,8 +38,8 @@ const GeraxStyleAnimations = ({ children }: GeraxStyleAnimationsProps) => {
   }, []);
 
   return (
-    <div className="bg-gray-50 container">
-      <section className="py-20 px-6">
+    <div className={`bg-gray-50 ${isContainer && "container"} `}>
+      <section className={isContainer ? "py-20 " : ""}>
         <div
           ref={sectionRef}
           className="animate-initial transition-all duration-1000 ease-out"

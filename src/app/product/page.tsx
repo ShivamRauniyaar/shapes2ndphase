@@ -63,7 +63,7 @@ export default async function ShopPage({ searchParams }: Props) {
           </div>
         </div>
       </div>
-
+   
       <ScrollAnimationComponent children={<ProductCatalog />} />
       <ScrollAnimationComponent children={<MultiLevelImageWithText />} />
       <ScrollAnimationComponent children={<ExploreRangeCmp />} />

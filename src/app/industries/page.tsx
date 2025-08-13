@@ -5,7 +5,6 @@ import PartnerSection from "@/components/v2Sections/PartnerSection";
 import ParallaxImage from "@/components/AnimatedComponents/ParallaxImage";
 import StickyScrollText from "@/components/AnimatedComponents/StuckTextAnimation";
 import ServicesSection from "@/components/v2Sections/ImageCorrusel";
-import { title } from "process";
 import TextWithAccordion from "@/components/v2Sections/textWithAccordion";
 import ThinBgWithText from "@/components/v2Sections/ThinBgWithText";
 import EnquiryForm from "@/components/v2Sections/contactSection";

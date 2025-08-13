@@ -8,6 +8,7 @@ interface TextAccordionData {
     description?: string;
     buttonName?: string;
     AccordionData?: AccordionItem[];
+    isStats?: boolean;
   };
 }
 
@@ -17,6 +18,30 @@ const AccordionTextData = {
   description:
     "Every piece of our cutlery is intentionally crafted - not just manufactured - with a focus on balance, durability, and refined details.",
   buttonName: "Download Catalog",
+  isStats: true,
+  AccordionData: [
+    {
+      id: 1,
+      label: "Made with wide range of Steel and Finishes",
+      content:
+        "Crafted using premium steel grades and curated finishes to suit every aesthetic and performance need.",
+    },
+    {
+      id: 2,
+      label: "Various Coating and Plating Options",
+      content: "This is the description of various coating and plating options",
+    },
+    {
+      id: 3,
+      label: "Tested for Durability",
+      content: "This is the description of Tested for Durability",
+    },
+    {
+      id: 4,
+      label: "100% Dishwasher Safe",
+      content: "This is the description of 100% Dishwasher Safe",
+    },
+  ],
 };
 const TextWithAccordion: React.FC<TextAccordionData> = ({
   Data = AccordionTextData,
@@ -43,12 +68,14 @@ const TextWithAccordion: React.FC<TextAccordionData> = ({
               </button>
             )}
 
-            <div className="absolute bottom-[0rem] ">
-              <StatsCircles />
-            </div>
+            {Data?.isStats && (
+              <div className="absolute bottom-[0rem] ">
+                <StatsCircles />
+              </div>
+            )}
           </div>
           <div className="w-[50%]">
-            <Accordion />
+            <Accordion data={Data?.AccordionData} />
           </div>
         </div>
       </div>

@@ -54,8 +54,8 @@ h1 {
 h2 {
   font-size: 64px !important;
   font-weight: 400 !important;
-  line-height: 120% !important;
   color: #0a0703;
+  line-height: initial !important;
 }
 
 h3 {
@@ -78,7 +78,7 @@ h4 {
 h5 {
   font-size: 20px;
   font-weight: 500 !important;
-  line-height: 100% !important;
+
   font-family: var(--font-manrope);
   color: #010b13 !important;
 }
@@ -86,14 +86,18 @@ h5 {
 h6 {
   font-size: 28px !important;
   font-weight: 500 !important;
-  line-height: 100% !important;
+
   color: #0a0703;
+}
+
+.font_galesion {
+  font-family: var(--font-gelasio);
 }
 
 p {
   font-weight: 400 !important;
   font-size: 20px;
-  line-height: 100% !important;
+
   color: #404040;
   font-family: var(--font-manrope);
 }
@@ -171,7 +175,7 @@ p {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 500 !important;
   font-size: 28px !important;
-  line-height: 100% !important;
+
   color: #0a0703 !important;
 }
 
@@ -179,7 +183,7 @@ p {
   font-family: var(--font-manrope);
   font-weight: 400 !important;
   font-size: 16px !important;
-  line-height: 100% !important;
+
   color: #404040;
 }
 
@@ -199,4 +203,12 @@ p {
 .animate-visible {
   opacity: 1;
   transform: scale(1) translateY(0);
+}
+
+.about_banner_heading {
+  font-family: var(--font-manrope);
+  font-weight: 400;
+  font-size: 40px;
+  color: #0a0703;
+  line-height: 100%;
 }

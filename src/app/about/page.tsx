@@ -8,7 +8,11 @@ import OurPresence from "@/components/OurPresence/OurPresence";
 import MileStone from "@/components/MileStone/MileStone";
 import InfrastructureAndCorporate from "@/components/InfrastructureAndCorporate/InfrastructureAndCorporate";
 import TamsSection from "@/components/TeamSection/TeamSection";
-
+import ScrollAnimationComponent from "@/components/AnimatedComponents/SlowlyPopped";
+import ParallaxImage from "@/components/AnimatedComponents/ParallaxImage";
+import TextWith4ImageCollage from "@/components/v2Sections/TextWith4ImageCollage";
+import TextWithAccordion from "@/components/v2Sections/textWithAccordion";
+import HorizontalScroll from "@/components/AnimatedComponents/RightToLeftMarkupScroll";
 async function getDirectorMessage() {
   const res = await fetch(`${SHAPES_CMS_URL}directormessage`, {
     headers: {
@@ -26,50 +30,93 @@ async function getDirectorMessage() {
   return data?.data?.[0] || null;
 }
 
+const AccordionTextData = {
+  header1: "Core Capabilities",
+  description:
+    "Fundamental strengths and skills that enable us to deliver exceptional products and services.",
+  buttonName: "Download Catalog",
+  AccordionData: [
+    {
+      id: 1,
+      label: "Premium Cutlery and Stainless Steel",
+      content:
+        "Expertise in crafting high-quality cutlery using superior stainless steel, ensuring durability, elegance, and performance.",
+    },
+    {
+      id: 2,
+      label: "Custom Branding & Bespoke Collections",
+      content:
+        "Offering tailored design solutions and personalized branding to create unique collections that reflect your brand’s identity and style.",
+    },
+    {
+      id: 3,
+      label: "Marketing & Visibility Support for Trade Partners",
+      content:
+        "Providing comprehensive marketing assistance, promotional materials, and strategic collaborations to enhance your market reach and brand presence.",
+    },
+    {
+      id: 4,
+      label: "PAN India Sales Network",
+      content:
+        "Leveraging a robust distribution network across India to ensure timely delivery, wide availability, and dedicated support for our partners nationwide.",
+    },
+  ],
+};
+
 const About = async () => {
   const directorMessage1 = await getDirectorMessage();
 
   return (
     <div>
       <Inner backgroundColor="#EA2127" />
-      <div className="breadcrumb-block style-img">
-        <div className="breadcrumb-main bg-linear overflow-hidden">
-          <div className="container lg:pt-[134px] pt-24 pb-10 relative">
-            <div className="main-content w-full h-full flex flex-col items-center justify-center relative z-[1]">
-              <div className="text-content">
-                <div className="heading2 text-center">About</div>
-                <div className="link flex items-center justify-center gap-1 caption1 mt-3">
-                  <Link href={"/"}>Homepage</Link>
-                  <Icon.CaretRight size={14} className="text-secondary2" />
-                  <div className="text-secondary2 capitalize">About</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="bg-white">
-        {" "}
-        <div className="container">
-          <div className="content   overflow-hidden xl:-mx-5 rounded-3xl md:py-[60px] py-8">
-            <div className="list-testi w-full section-swiper-navigation style-center style-small-border mt-5">
-              <div className="testi-item flex flex-col items-center justify-center xl:px-[120px] md:px-[60px] px-8">
-                <div className="desc heading4 font-medium text-center  text-[#949494]  font-weight-[600]">
-                  Shapes started out as the brainchild of Neha and Ashish Jain,
-                  from the family of Ankur Exports.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <BannerWithText />
-      <OurPresence />
-      <MileStone />
-      <InfrastructureAndCorporate />
 
-     
-      <TamsSection Data={directorMessage1} />
+      <ScrollAnimationComponent
+        children={
+          <div className="bg-[#fcfaf7]">
+            <div
+              className="container flex items-center"
+              style={{
+                height: "426px",
+                marginTop: "7rem",
+              }}
+            >
+              <div
+                className="flex"
+                style={{
+                  display: "flex",
+                  width: "100%",
+                }}
+              >
+                <p
+                  className="text-black"
+                  style={{
+                    width: "20%",
+                  }}
+                >
+                  At our core
+                </p>
+                <div
+                  className="about_banner_heading"
+                  style={{
+                    width: "80%",
+                  }}
+                >
+                  Premium cutlery and stainless steel brand delivering unmatched
+                  quality driven by innovation and commitment
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+        isContainer={false}
+      />
+      
+      <ParallaxImage image={"/images/newimages/about_visual_image.png"} />
+      <ScrollAnimationComponent
+        children={<TextWithAccordion Data={AccordionTextData} />}
+      />
+
+      <HorizontalScroll />
     </div>
   );
 };
