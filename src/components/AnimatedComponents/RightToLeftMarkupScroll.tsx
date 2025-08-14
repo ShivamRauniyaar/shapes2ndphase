@@ -59,12 +59,7 @@ export default function HorizontalScroll() {
       btn: "Get Started",
       sectionContent: <FourthStepJourney />,
     },
-    {
-      color: "#FCFAF7",
-      title: "Section 5",
-      btn: "Get Started",
-      sectionContent: <FifthStepJourney />,
-    },
+    
   ];
 
   return (
@@ -87,6 +82,7 @@ export default function HorizontalScroll() {
             height: "100vh",
             background: sec.color,
             display: "flex",
+            position: "relative",
           }}
         >
           <div className="container">{sec?.sectionContent}</div>
@@ -104,7 +100,7 @@ export default function HorizontalScroll() {
           alignItems: "center",
           position: "absolute",
           top: "50%",
-          left: "25%",
+          left: "30%",
           transform: "translate(-50%, -50%)",
         }}
       >

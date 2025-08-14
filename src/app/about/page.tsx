@@ -13,6 +13,9 @@ import ParallaxImage from "@/components/AnimatedComponents/ParallaxImage";
 import TextWith4ImageCollage from "@/components/v2Sections/TextWith4ImageCollage";
 import TextWithAccordion from "@/components/v2Sections/textWithAccordion";
 import HorizontalScroll from "@/components/AnimatedComponents/RightToLeftMarkupScroll";
+import MultiLevelImageWithText from "@/components/v2Sections/MultiLevelImageWithText";
+import WorldParallax from "@/components/v2Sections/ParallaxImageText";
+import IndustrialCapabilitiesSection from "@/components/v2Sections/IndustrialCapabilitiesSection";
 async function getDirectorMessage() {
   const res = await fetch(`${SHAPES_CMS_URL}directormessage`, {
     headers: {
@@ -110,13 +113,28 @@ const About = async () => {
         }
         isContainer={false}
       />
-      
+
       <ParallaxImage image={"/images/newimages/about_visual_image.png"} />
       <ScrollAnimationComponent
         children={<TextWithAccordion Data={AccordionTextData} />}
       />
 
       <HorizontalScroll />
+      <ScrollAnimationComponent children={<MultiLevelImageWithText />} />
+
+      <section
+        className="min-h-screen"
+        style={{
+          backgroundImage: `url(/images/newimages/WorldGraph.png)`,
+          backgroundSize: "cover", // or "contain" if you want the whole image visible
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          height: "100%",
+          width: "100%",
+        }}
+      ></section>
+
+      <ScrollAnimationComponent children={<IndustrialCapabilitiesSection />} />
     </div>
   );
 };

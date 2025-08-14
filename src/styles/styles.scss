@@ -45,7 +45,7 @@ textarea {
 }
 
 h1 {
-  font-size: 56px !important;
+  font-size: 56px;
   font-weight: 400 !important;
   line-height: 105% !important;
   color: #010b13;
@@ -211,4 +211,10 @@ p {
   font-size: 40px;
   color: #0a0703;
   line-height: 100%;
+}
+
+.position_absolute_top_center {
+  position: absolute;
+  top: 50% !important;
+  transform: translate(-50%, -50%);
 }

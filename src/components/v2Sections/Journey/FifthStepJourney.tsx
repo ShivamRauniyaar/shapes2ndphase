@@ -13,20 +13,23 @@ const FifthStepJourney = () => {
           className="absolute"
           style={{
             position: "absolute",
-            right: 0,
+            left: "-10%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
             height: "80%",
-            background: "yellow",
             width: "20%",
+            border: "1px solid transparent",
+            zIndex: "9999",
           }}
         >
           <div
             style={{
               backgroundImage:
                 'url("/images/newimages/golden-cutlery-plate-dark.jpg")',
-              backgroundSize: "cover",
+              backgroundSize: "contain",
               backgroundPosition: "left", // Show left side
               overflow: "hidden",
-              clipPath: "inset(0 50% 0 0)",
+              clipPath: "inset(0 0 0 50%)",
               height: "100%",
               width: "200%",
             }}

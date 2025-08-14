@@ -5,24 +5,40 @@ const FirstStepJourney = () => {
     <Fragment>
       <div
         style={{
-          padding: "80px",
+          padding: "80px 0px",
         }}
       >
         <h2 className="font_galesion">Our Journey</h2>
+        <h1
+          style={{
+            fontSize: "136px",
+            left: "20%",
+            paddingLeft: "2rem",
+          }}
+          className="position_absolute_top_center"
+        >
+          1990
+        </h1>
         <div
           style={{
-            display: "flex",
-            justifyContent: "end",
+            position: "absolute",
+            top: "10%",
+            left: "35%",
             marginTop: "5rem",
+            marginRight: "20%",
           }}
         >
           <div
             style={{
-              width: "40%",
+              width: "525px",
             }}
           >
             <h3>The Beginning</h3>
-            <span className="mt-3">
+            <span
+              style={{
+                marginTop: "2rem",
+              }}
+            >
               Lore ipsumm dolor sit amet conseectetur. Vitae duis disgnissim
               tincidunt orci ac pelletesque. Aliquet in mollis ac aliquam dictum
               amet consectetur. Aliquam massa velit biendum enim tristique.
@@ -33,19 +49,20 @@ const FirstStepJourney = () => {
           className="absolute"
           style={{
             position: "absolute",
-            right: 0,
-            top: "20%",
+            right: "-10%",
+            top: "50%",
             transform: "translate(-50%, -50%)",
             height: "80%",
-            background: "yellow",
             width: "20%",
+            border: "1px solid transparent",
+            zIndex: "9999",
           }}
         >
           <div
             style={{
               backgroundImage:
                 'url("/images/newimages/golden-cutlery-plate-dark.jpg")',
-              backgroundSize: "cover",
+              backgroundSize: "contain",
               backgroundPosition: "left", // Show left side
               overflow: "hidden",
               clipPath: "inset(0 50% 0 0)",
@@ -58,10 +75,11 @@ const FirstStepJourney = () => {
           style={{
             position: "absolute",
             top: "50%",
-            left: "25%",
+            left: "30%",
             transform: "translate(-50%, -50%)",
             width: "0",
             height: "0",
+            border: "1px solid transparent",
           }}
         >
           <div
@@ -75,6 +93,20 @@ const FirstStepJourney = () => {
             }}
           ></div>
         </div>
+
+        <div
+          style={{
+            backgroundImage:
+              'url("/images/newimages/journeyfirststepframe1.svg")',
+            backgroundSize: "cover",
+            backgroundPosition: "center", // Show left side
+            height: "294px",
+            width: "525px",
+            position: "absolute",
+            bottom: "10%",
+            left: "35%",
+          }}
+        ></div>
       </div>
     </Fragment>
   );
