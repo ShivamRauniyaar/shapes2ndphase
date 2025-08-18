@@ -5,25 +5,14 @@ import Link from "next/link";
 import React from "react";
 import { SHAPES_CMS_URL } from "../../../Constant";
 
-async function getDirectorMessage() {
-  const res = await fetch(`${SHAPES_CMS_URL}directormessage`, {
-    headers: {
-      "Content-Type": "application/json",
-      Origin: "https://shapesproduct.netlify.app/",
-    },
-    next: { revalidate: 86400 },
-  });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch exhibition data");
-  }
-
-  const data = await res.json();
-  return data?.data?.[0] || null;
-}
 
 const DirectorMessage = async () => {
-  const directorMessage1 = await getDirectorMessage();
+  const directorMessage1 = {
+    content: {
+      body: [],
+    },
+  };
 
   return (
     <div>
