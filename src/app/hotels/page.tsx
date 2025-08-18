@@ -9,25 +9,9 @@ import productData from "@/data/Product.json";
 import VideoTutorial from "@/components/banner/VideoTutorial";
 import ElevatingExperiences from "@/components/Sections/ELevatingExperiences";
 
-async function getExhibitionData() {
-  const res = await fetch(`${SHAPES_CMS_URL}exhibition`, {
-    headers: {
-      "Content-Type": "application/json",
-      Origin: "https://shapesproduct.netlify.app/",
-    },
-    next: { revalidate: 86400 }, // Server-side generation with revalidation
-  });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch exhibition data");
-  }
-
-  const data = await res.json();
-  return data?.data?.[0] || null;
-}
 
 const Hotels = async () => {
-  const exhibitionData = await getExhibitionData();
 
   return (
     <>

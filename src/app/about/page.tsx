@@ -19,22 +19,7 @@ import IndustrialCapabilitiesSection from "@/components/v2Sections/IndustrialCap
 import EnquiryForm from "@/components/v2Sections/contactSection";
 import FounderSection from "@/components/v2Sections/FounderSection";
 
-async function getDirectorMessage() {
-  const res = await fetch(`${SHAPES_CMS_URL}directormessage`, {
-    headers: {
-      "Content-Type": "application/json",
-      Origin: "https://shapesproduct.netlify.app/",
-    },
-    next: { revalidate: 86400 }, // Ensures data is refreshed every 24 hours (ISR-like behavior)
-  });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch exhibition data");
-  }
-
-  const data = await res.json();
-  return data?.data?.[0] || null;
-}
 
 const AccordionTextData = {
   header1: "Core Capabilities",
@@ -70,7 +55,6 @@ const AccordionTextData = {
 };
 
 const About = async () => {
-  const directorMessage1 = await getDirectorMessage();
 
   return (
     <div>

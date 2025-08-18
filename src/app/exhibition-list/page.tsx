@@ -2,25 +2,22 @@ import React from "react";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import { SHAPES_CMS_URL } from "../../../Constant";
 
-async function getExhibitionData() {
-  const res = await fetch(`${SHAPES_CMS_URL}exhibition`, {
-    headers: {
-      "Content-Type": "application/json",
-      Origin: "https://shapesproduct.netlify.app/",
-    },
-    next: { revalidate: 86400 }, // Server-side generation with revalidation
-  });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch exhibition data");
-  }
-
-  const data = await res.json();
-  return data?.data?.[0] || null;
-}
 
 const StoreList = async () => {
-  const exhibitionData = await getExhibitionData();
+  const exhibitionData: {
+    content?: {
+      topiH1?: string;
+      exhibitions?: Array<{
+        heading?: string;
+        discription?: string;
+        image?: Array<{
+          filePath?: string;
+          src?: string;
+        }>;
+      }>;
+    };
+  } = {};
 
   return (
     <>
