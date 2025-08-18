@@ -54,32 +54,56 @@ export default async function Home() {
   return (
     <>
       <Inner backgroundColor="#EA2127" />
+
+      {/* Hero Slider */}
       <div id="header" className="relative w-full">
         <SliderOne SliderData={HomeSectionData?.content?.topbanner} />
       </div>
-      <ScrollAnimationComponent children={V2BreadCrumb()} />
-      <ScrollAnimationComponent children={ExploreRangeCmp()} />
+
+      {/* Scroll animated sections */}
+      <ScrollAnimationComponent>
+        <V2BreadCrumb />
+      </ScrollAnimationComponent>
+
+      <ScrollAnimationComponent>
+        <ExploreRangeCmp />
+      </ScrollAnimationComponent>
+
       <ParallaxImage />
+
       <StickyScrollText />
-      <ScrollAnimationComponent children={<ServicesSection />} />
-      <ScrollAnimationComponent children={<PartnerSection />} />
+
+      <ScrollAnimationComponent>
+        <ServicesSection />
+      </ScrollAnimationComponent>
+
+      <ScrollAnimationComponent>
+        <PartnerSection />
+      </ScrollAnimationComponent>
+
       <ParallaxImage />
-      <ScrollAnimationComponent children={<MultiLevelImageWithText />} />
-      <ScrollAnimationComponent children={<EnquiryForm />} />
-      <ScrollAnimationComponent
-        children={
-          <div className="blog grid md:py-20 py-10">
-            <div className="container">
-              <h3 className="text-center mb-[2rem]">Blogs</h3>
-              <div className="list-blog grid lg:grid-cols-3 sm:grid-cols-2 md:gap-[42px] gap-8">
-                {blogData?.slice(0, 3)?.map((item) => (
-                  <BlogItem1 key={item.id} data={item} type="style-one" />
-                ))}
-              </div>
+
+      <ScrollAnimationComponent>
+        <MultiLevelImageWithText />
+      </ScrollAnimationComponent>
+
+      <ScrollAnimationComponent>
+        <EnquiryForm />
+      </ScrollAnimationComponent>
+
+      {/* Blog Section */}
+      <ScrollAnimationComponent>
+        <div className="blog grid md:py-20 py-10">
+          <div className="container">
+            <h3 className="text-center mb-[2rem]">Blogs</h3>
+            <div className="list-blog grid lg:grid-cols-3 sm:grid-cols-2 md:gap-[42px] gap-8">
+              {blogData?.slice(0, 3)?.map((item) => (
+                <BlogItem1 key={item.id} data={item} type="style-one" />
+              ))}
             </div>
           </div>
-        }
-      />
+        </div>
+      </ScrollAnimationComponent>
     </>
   );
 }

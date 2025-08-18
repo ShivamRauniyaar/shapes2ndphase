@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
+    unoptimized: true,
     domains: [
       "www.shapesproducts.in",
       "img.freepik.com",

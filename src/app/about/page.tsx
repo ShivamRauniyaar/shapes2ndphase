@@ -18,6 +18,7 @@ import WorldParallax from "@/components/v2Sections/ParallaxImageText";
 import IndustrialCapabilitiesSection from "@/components/v2Sections/IndustrialCapabilitiesSection";
 import EnquiryForm from "@/components/v2Sections/contactSection";
 import FounderSection from "@/components/v2Sections/FounderSection";
+
 async function getDirectorMessage() {
   const res = await fetch(`${SHAPES_CMS_URL}directormessage`, {
     headers: {
@@ -75,60 +76,65 @@ const About = async () => {
     <div>
       <Inner backgroundColor="#EA2127" />
 
-      <ScrollAnimationComponent
-        children={
-          <div className="bg-[#fcfaf7]">
+      {/* First Scroll Section */}
+      <ScrollAnimationComponent isContainer={false}>
+        <div className="bg-[#fcfaf7]">
+          <div
+            className="container flex items-center"
+            style={{
+              height: "426px",
+              marginTop: "7rem",
+            }}
+          >
             <div
-              className="container flex items-center"
+              className="flex"
               style={{
-                height: "426px",
-                marginTop: "7rem",
+                display: "flex",
+                width: "100%",
               }}
             >
-              <div
-                className="flex"
+              <p
+                className="text-black"
                 style={{
-                  display: "flex",
-                  width: "100%",
+                  width: "20%",
                 }}
               >
-                <p
-                  className="text-black"
-                  style={{
-                    width: "20%",
-                  }}
-                >
-                  At our core
-                </p>
-                <div
-                  className="about_banner_heading"
-                  style={{
-                    width: "80%",
-                  }}
-                >
-                  Premium cutlery and stainless steel brand delivering unmatched
-                  quality driven by innovation and commitment
-                </div>
+                At our core
+              </p>
+              <div
+                className="about_banner_heading"
+                style={{
+                  width: "80%",
+                }}
+              >
+                Premium cutlery and stainless steel brand delivering unmatched
+                quality driven by innovation and commitment
               </div>
             </div>
           </div>
-        }
-        isContainer={false}
-      />
+        </div>
+      </ScrollAnimationComponent>
 
       <ParallaxImage image={"/images/newimages/about_visual_image.png"} />
-      <ScrollAnimationComponent
-        children={<TextWithAccordion Data={AccordionTextData} />}
-      />
+
+      {/* Accordion Section */}
+      <ScrollAnimationComponent>
+        <TextWithAccordion Data={AccordionTextData} />
+      </ScrollAnimationComponent>
 
       <HorizontalScroll />
-      <ScrollAnimationComponent children={<MultiLevelImageWithText />} />
 
+      {/* Multi-Level Image Section */}
+      <ScrollAnimationComponent>
+        <MultiLevelImageWithText />
+      </ScrollAnimationComponent>
+
+      {/* Background Image Section */}
       <section
         className="min-h-screen"
         style={{
           backgroundImage: `url(/images/newimages/WorldGraph.png)`,
-          backgroundSize: "cover", // or "contain" if you want the whole image visible
+          backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           height: "100%",
@@ -136,8 +142,12 @@ const About = async () => {
         }}
       ></section>
 
-      <ScrollAnimationComponent children={<IndustrialCapabilitiesSection />} />
+      {/* Industrial Capabilities */}
+      <ScrollAnimationComponent>
+        <IndustrialCapabilitiesSection />
+      </ScrollAnimationComponent>
 
+      {/* Video Intro Section */}
       <section className="min-h-screen relative">
         <video
           autoPlay
@@ -161,14 +171,13 @@ const About = async () => {
         </video>
         <div className="container py-40 h-screen">
           <div className="grid grid-cols-2 grid-rows-2 h-full w-full">
-            <div className="flex items-center justify-center  bg-red-500 p-8">
+            <div className="flex items-center justify-center bg-red-500 p-8">
               <h2 className="text-white">Our Commitment to Society</h2>
             </div>
             <div className="flex items-center justify-center text-white bg-blue-500 p-8">
               <div className="video_intro_section w-full h-full flex justify-center items-center p-8">
                 <div>
                   <h4 className="video_intro_section_heading">
-                    {" "}
                     Lorem ipsum dolor sit amet consectetur.
                   </h4>
                   <p className="video_intro_section_description">
@@ -182,7 +191,6 @@ const About = async () => {
             </div>
             <div className="flex items-center justify-center text-white bg-green-500 p-8">
               <div className="video_intro_section w-full h-full flex justify-center items-center p-8">
-                {" "}
                 <div>
                   <h4 className="video_intro_section_heading">
                     Lorem ipsum dolor sit amet consectetur.
@@ -196,9 +204,8 @@ const About = async () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-center text-white bg-yellow-500 p-8 flex justify-center">
+            <div className="flex items-center justify-center text-white bg-yellow-500 p-8">
               <div className="video_intro_section w-full h-full flex justify-center items-center p-8">
-                {" "}
                 <div>
                   <h4 className="video_intro_section_heading">
                     Lorem ipsum dolor sit amet consectetur.
@@ -215,8 +222,16 @@ const About = async () => {
           </div>
         </div>
       </section>
-      <ScrollAnimationComponent children={<FounderSection />} />
-      <ScrollAnimationComponent children={<EnquiryForm />} />
+
+      {/* Founder Section */}
+      <ScrollAnimationComponent>
+        <FounderSection />
+      </ScrollAnimationComponent>
+
+      {/* Enquiry Form */}
+      <ScrollAnimationComponent>
+        <EnquiryForm />
+      </ScrollAnimationComponent>
     </div>
   );
 };

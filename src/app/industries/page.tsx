@@ -81,14 +81,15 @@ const textWithAccordionData = {
 const Industries = () => {
   return (
     <Fragment>
+      {/* Hero Banner */}
       <div
         className="relative"
         style={{
           backgroundImage: `url(/images/newimages/productbanner3.png)`,
           width: "100%",
           height: "800px",
-          backgroundSize: "auto", // Changed to 'contain'
-          backgroundPosition: "center", // Center the image
+          backgroundSize: "auto",
+          backgroundPosition: "center",
           borderRadius: "12px",
           backgroundRepeat: "no-repeat",
           marginTop: "5rem",
@@ -107,27 +108,41 @@ const Industries = () => {
           </div>
         </div>
       </div>
-      <ScrollAnimationComponent children={<TextWith4ImageCollage />} />
-      <ScrollAnimationComponent children={<PartnerSection />} />
+
+      {/* Sections */}
+      <ScrollAnimationComponent>
+        <TextWith4ImageCollage />
+      </ScrollAnimationComponent>
+
+      <ScrollAnimationComponent>
+        <PartnerSection />
+      </ScrollAnimationComponent>
+
       <ParallaxImage image={"/images/newimages/Visual.png"} />
+
       <StickyScrollText Data={stickyScrollData} />
-      <ScrollAnimationComponent
-        children={
-          <ServicesSection
-            header1={"Comprehensive Table-top Solutions"}
-            header2={""}
-            description={
-              "A tabletop collections that unifies form, function, and guest experience across every dining touchpoint"
-            }
-          />
-        }
-      />
+
+      <ScrollAnimationComponent>
+        <ServicesSection
+          header1={"Comprehensive Table-top Solutions"}
+          header2={""}
+          description={
+            "A tabletop collections that unifies form, function, and guest experience across every dining touchpoint"
+          }
+        />
+      </ScrollAnimationComponent>
+
       <ParallaxImage image={"/images/newimages/visual_2.png"} />
-      <ScrollAnimationComponent
-        children={<TextWithAccordion Data={textWithAccordionData} />}
-      />
+
+      <ScrollAnimationComponent>
+        <TextWithAccordion Data={textWithAccordionData} />
+      </ScrollAnimationComponent>
+
       <ThinBgWithText />
-      <ScrollAnimationComponent children={<EnquiryForm />} />
+
+      <ScrollAnimationComponent>
+        <EnquiryForm />
+      </ScrollAnimationComponent>
     </Fragment>
   );
 };

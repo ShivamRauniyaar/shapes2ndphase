@@ -19,7 +19,7 @@ interface Props {
 async function getProducts(page: number) {
   const limit = 10;
   const response = await fetch(
-    `${SHAPES_API_URL}getproductsinfo?pageNum=${page}&pageSize=10`,
+    `${SHAPES_API_URL}getproductsinfo?pageNum=${page}&pageSize=${limit}`,
     {
       headers: { "Content-Type": "application/json" },
       cache: "no-store", // Ensures fresh data
@@ -37,6 +37,7 @@ export default async function ShopPage({ searchParams }: Props) {
 
   return (
     <Fragment>
+      {/* Hero Banner */}
       <div
         className="relative"
         style={{
@@ -63,16 +64,39 @@ export default async function ShopPage({ searchParams }: Props) {
           </div>
         </div>
       </div>
-   
-      <ScrollAnimationComponent children={<ProductCatalog />} />
-      <ScrollAnimationComponent children={<MultiLevelImageWithText />} />
-      <ScrollAnimationComponent children={<ExploreRangeCmp />} />
-      <ScrollAnimationComponent children={<PartnerSection />} />
+
+      {/* Sections */}
+      <ScrollAnimationComponent>
+        <ProductCatalog />
+      </ScrollAnimationComponent>
+
+      <ScrollAnimationComponent>
+        <MultiLevelImageWithText />
+      </ScrollAnimationComponent>
+
+      <ScrollAnimationComponent>
+        <ExploreRangeCmp />
+      </ScrollAnimationComponent>
+
+      <ScrollAnimationComponent>
+        <PartnerSection />
+      </ScrollAnimationComponent>
+
       <ParallaxImage />
-      <ScrollAnimationComponent children={<TextWithAccordion />} />
-      <ScrollAnimationComponent children={<ImageCatalog2nd />} />
+
+      <ScrollAnimationComponent>
+        <TextWithAccordion />
+      </ScrollAnimationComponent>
+
+      <ScrollAnimationComponent>
+        <ImageCatalog2nd />
+      </ScrollAnimationComponent>
+
       <ThinBgWithText />
-      <ScrollAnimationComponent children={<EnquiryForm />} />
+
+      <ScrollAnimationComponent>
+        <EnquiryForm />
+      </ScrollAnimationComponent>
     </Fragment>
   );
 }
