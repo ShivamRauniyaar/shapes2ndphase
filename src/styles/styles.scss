@@ -218,3 +218,27 @@ p {
   top: 50% !important;
   transform: translate(-50%, -50%);
 }
+
+.video_intro_section {
+  background-color: #ffffff;
+  opacity: 0.8;
+}
+.video_intro_section:hover {
+  background-color: #ffffff;
+}
+
+
+.video_intro_section_heading {
+  font-size: 24px;
+  font-weight: 500;
+  color: #0a0703;
+  font-family: var(--font-manrope);
+}
+
+.video_intro_section_description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #200405;
+  font-family: var(--font-manrope);
+  margin-top: 1.5rem ;
+}

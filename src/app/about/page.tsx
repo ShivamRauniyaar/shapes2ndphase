@@ -16,6 +16,8 @@ import HorizontalScroll from "@/components/AnimatedComponents/RightToLeftMarkupS
 import MultiLevelImageWithText from "@/components/v2Sections/MultiLevelImageWithText";
 import WorldParallax from "@/components/v2Sections/ParallaxImageText";
 import IndustrialCapabilitiesSection from "@/components/v2Sections/IndustrialCapabilitiesSection";
+import EnquiryForm from "@/components/v2Sections/contactSection";
+import FounderSection from "@/components/v2Sections/FounderSection";
 async function getDirectorMessage() {
   const res = await fetch(`${SHAPES_CMS_URL}directormessage`, {
     headers: {
@@ -135,6 +137,86 @@ const About = async () => {
       ></section>
 
       <ScrollAnimationComponent children={<IndustrialCapabilitiesSection />} />
+
+      <section className="min-h-screen relative">
+        <video
+          autoPlay
+          loop
+          muted
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: -1,
+          }}
+        >
+          <source
+            src="/images/newimages/aboutintrovideo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+        <div className="container py-40 h-screen">
+          <div className="grid grid-cols-2 grid-rows-2 h-full w-full">
+            <div className="flex items-center justify-center  bg-red-500 p-8">
+              <h2 className="text-white">Our Commitment to Society</h2>
+            </div>
+            <div className="flex items-center justify-center text-white bg-blue-500 p-8">
+              <div className="video_intro_section w-full h-full flex justify-center items-center p-8">
+                <div>
+                  <h4 className="video_intro_section_heading">
+                    {" "}
+                    Lorem ipsum dolor sit amet consectetur.
+                  </h4>
+                  <p className="video_intro_section_description">
+                    Lorem ipsum dolor sit amet consectetur. Lorem sit
+                    suspendisse volutpat et sit sit senectus nec. Aucotr viverra
+                    vitae magna senectus nibh aliquam. Pellentesque dolor eros
+                    pellentesque curabitur sit at vel semper fames.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center justify-center text-white bg-green-500 p-8">
+              <div className="video_intro_section w-full h-full flex justify-center items-center p-8">
+                {" "}
+                <div>
+                  <h4 className="video_intro_section_heading">
+                    Lorem ipsum dolor sit amet consectetur.
+                  </h4>
+                  <p className="video_intro_section_description">
+                    Lorem ipsum dolor sit amet consectetur. Lorem sit
+                    suspendisse volutpat et sit sit senectus nec. Aucotr viverra
+                    vitae magna senectus nibh aliquam. Pellentesque dolor eros
+                    pellentesque curabitur sit at vel semper fames.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center justify-center text-white bg-yellow-500 p-8 flex justify-center">
+              <div className="video_intro_section w-full h-full flex justify-center items-center p-8">
+                {" "}
+                <div>
+                  <h4 className="video_intro_section_heading">
+                    Lorem ipsum dolor sit amet consectetur.
+                  </h4>
+                  <p className="video_intro_section_description">
+                    Lorem ipsum dolor sit amet consectetur. Lorem sit
+                    suspendisse volutpat et sit sit senectus nec. Aucotr viverra
+                    vitae magna senectus nibh aliquam. Pellentesque dolor eros
+                    pellentesque curabitur sit at vel semper fames.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <ScrollAnimationComponent children={<FounderSection />} />
+      <ScrollAnimationComponent children={<EnquiryForm />} />
     </div>
   );
 };
