@@ -66,10 +66,7 @@ const AddressContent: React.FC<TabContent> = ({
 
   const fetchStates = async () => {
     try {
-      const res = await Axios.get(
-        `${API_URL}/api/public/address/listofstates/${formdata.shipping.country}`
-      );
-      setStates(res.data.data);
+      setStates([]);
     } catch (err: any) {
       console.error(err);
       toast.error(err.response.data.message);
@@ -77,12 +74,7 @@ const AddressContent: React.FC<TabContent> = ({
   };
   const fetchShippingAddress = async () => {
     try {
-      const res = await Axios.get(`${API_URL}/api/public/address/getaddress`);
-      setShippingAddress(res.data.data);
-      if(setactiveAddressid){
-        var primary =res.data.data.find((item:any) => item.isPrimary);
-        setactiveAddressid(primary.addressID)
-      }
+      setShippingAddress([]);
     } catch (err) {
       console.error(err);
     }
@@ -129,13 +121,6 @@ const AddressContent: React.FC<TabContent> = ({
 
   const handleDelete = async (id: string) => {
     try {
-      const res = await Axios.post(
-        `${API_URL}/api/public/address/deleteshippingaddress`,
-        {
-          addressID: id,
-        }
-      );
-
       setShippingAddress(() => {
         return ShippingAddress.filter((item) => item.addressID !== id);
       });
@@ -146,13 +131,6 @@ const AddressContent: React.FC<TabContent> = ({
 
   const handleSetPrimary = async (id: string) => {
     try {
-      const res = await Axios.post(
-        `${API_URL}/api/public/address/deleteshippingaddress`,
-        {
-          addressID: id,
-        }
-      );
-
       setShippingAddress(() => {
         return ShippingAddress.map((item) => ({
           ...item,
@@ -196,13 +174,17 @@ const AddressContent: React.FC<TabContent> = ({
         : `${API_URL}/api/public/address/savetheaddress`;
 
       // Make the API call
-      const res = await Axios.post(url, payload);
+      const res = {
+        data: {
+          data: "",
+        },
+      };
 
       // Success feedback
       toast.success("Shipping Address Added Successfully");
 
-      if(setactiveAddressid){
-        setactiveAddressid(res.data.data)
+      if (setactiveAddressid) {
+        setactiveAddressid(res.data.data);
       }
 
       // Clear form states
@@ -315,7 +297,7 @@ const AddressContent: React.FC<TabContent> = ({
                     >
                       Country <span className="text-red">*</span>
                     </label>
-                   
+
                     <div className="col-span-full select-block">
                       <select
                         className="border border-line px-4 py-3 w-full rounded-lg border-line mt-2 px-4 py-3 w-full rounded-lg"
@@ -351,7 +333,7 @@ const AddressContent: React.FC<TabContent> = ({
                     >
                       State <span className="text-red">*</span>
                     </label>
-                    
+
                     <div className="col-span-full select-block">
                       <select
                         className="border border-line px-4 py-3 w-full rounded-lg border-line mt-2 px-4 py-3 w-full rounded-lg"
@@ -608,8 +590,6 @@ const AddressContent: React.FC<TabContent> = ({
               ))}
             </div>
           )}
-
-         
         </div>
       </div>
     </div>

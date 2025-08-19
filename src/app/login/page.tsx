@@ -7,6 +7,7 @@ import { API_URL } from "@/Constant";
 import { isAuth, saveToken, secondsInADay } from "@/Functions/Auth";
 import { toast } from "react-toastify";
 import { useCart } from "@/context/CartContext";
+import { access } from "fs";
 // import { useRouter } from "next/navigation";
 
 const Login = () => {
@@ -15,16 +16,13 @@ const Login = () => {
   const [step, setStep] = useState<"email" | "otp">("email");
   // const router = useRouter()
   const { migrateLocalCartToDB } = useCart();
-  
+
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const payload = { email: email };
-      const res = await Axios.post(
-        `${API_URL}/api/public/auth/puserloginsignup`,
-        payload
-      );
-      if (res.status === 200) {
+      const res = { status: 300 };
+      if (res?.status === 200) {
         setStep("otp");
       } else {
         console.error("Failed to submit email");
@@ -37,12 +35,14 @@ const Login = () => {
   const handleOtpSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Mocking OTP submit logic
       const payload = { email: email, emailOtp: otp };
-      const res = await Axios.post(
-        `${API_URL}/api/public/auth/verify-otp`,
-        payload
-      );
+      const res = {
+        status: 200,
+        data: {
+          accessToken: "",
+          expiryDuration: "",
+        },
+      };
       if (res.status === 200) {
         const expiryInDays = res.data.expiryDuration;
         saveToken(res.data.accessToken, expiryInDays);
@@ -64,17 +64,13 @@ const Login = () => {
     e.preventDefault();
     try {
       const payload: ResendPayload = { email: email };
-      const res = await Axios.post(
-        `${API_URL}/api/public/auth/generate-otp`,
-        payload
-      );
+      const res = { data: { message: "" } };
       toast.success(res.data.message);
     } catch (err: any) {
       console.error(err);
       toast.error(err.response.data.message);
     }
   };
-
 
   return (
     <>
@@ -154,8 +150,6 @@ const Login = () => {
                 </form>
               )}
             </div>
-
-          
           </div>
         </div>
       </div>

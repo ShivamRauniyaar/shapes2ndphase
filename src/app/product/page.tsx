@@ -18,13 +18,17 @@ interface Props {
 // Fetch products on the server
 async function getProducts(page: number) {
   const limit = 10;
-  const response = await fetch(
-    `${SHAPES_API_URL}getproductsinfo?pageNum=${page}&pageSize=${limit}`,
-    {
-      headers: { "Content-Type": "application/json" },
-      cache: "no-store", // Ensures fresh data
-    }
-  );
+  // Dummy data instead of API call
+  const response = {
+    json: async () => ({
+      data: [
+        { id: 1, name: "Product 1", description: "Description for product 1" },
+        { id: 2, name: "Product 2", description: "Description for product 2" },
+        { id: 3, name: "Product 3", description: "Description for product 3" },
+        // Add more dummy products as needed
+      ],
+    }),
+  };
 
   const productsData = (await response.json())?.data || [];
 
@@ -33,7 +37,6 @@ async function getProducts(page: number) {
 
 export default async function ShopPage({ searchParams }: Props) {
   const page = Number(searchParams?.page) || 1;
-  const { productsData } = await getProducts(page);
 
   return (
     <Fragment>

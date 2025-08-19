@@ -23,31 +23,21 @@ interface AwardData {
 }
 
 // Async data fetching for the App Router
-async function fetchAwardData(): Promise<AwardData | null> {
-  try {
-    const res = await fetch(`${SHAPES_CMS_URL}awards`, {
-      headers: {
-        "Content-Type": "application/json",
-        Origin: "https://shapesproduct.netlify.app/",
-      },
-      // Cache strategy for static generation
-      next: { revalidate: 86400 }, // Rebuild every 24 hours
-    });
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const data = await res.json();
-    return data?.data?.[0] || null;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-}
 
 const AwardSection = async () => {
-  const awardData = await fetchAwardData();
+  // Replace this with your actual data fetching logic
+  const awardData: AwardData = {
+    content: {
+      heading: "Awards",
+      awards: [
+        {
+          images: [{ src: "image1.jpg", filePath: "/images/image1.jpg" }],
+          title: "Best Design",
+          description: "<p>This award is for best design.</p>",
+        },
+      ],
+    },
+  };
 
   return (
     <Fragment>

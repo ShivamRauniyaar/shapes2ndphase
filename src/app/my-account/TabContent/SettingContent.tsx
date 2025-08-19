@@ -24,7 +24,16 @@ const SettingContent: React.FC<TabContent> = ({
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await Axios.get(`${API_URL}/api/public/carts/getprofile`);
+        const res = {
+          data: {
+            data: {
+              firstName: "Tony",
+              lastName: "Stark",
+              avatar: "/images/avatar.png",
+              userEmail: "tony@stark.com"
+            }
+          }
+        };
         const { firstName, lastName, avatar, userEmail } = res.data.data;
         setFirstName(firstName);
         setLastName(lastName);
@@ -45,13 +54,7 @@ const SettingContent: React.FC<TabContent> = ({
     e.preventDefault();
 
     try {
-      const res = await Axios.post(
-        `${API_URL}/api/public/carts/addorupdateprofile`,
-        {
-          firstName: firstName,
-          lastName: lastName,
-        }
-      );
+      
 
       setFirst(firstName);
       setLast(lastName);

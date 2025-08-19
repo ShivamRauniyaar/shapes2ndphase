@@ -6,13 +6,7 @@ import { SHAPES_CMS_URL } from "../../../Constant";
 
 async function getTestimonialsData() {
   try {
-    const res = await fetch(`${SHAPES_CMS_URL}testimonials`, {
-      headers: {
-        "Content-Type": "application/json",
-        Origin: "https://shapesproduct.netlify.app/",
-      },
-      next: { revalidate: 86400 }, // Server-side generation with revalidation
-    });
+    const res = await fetch(`${SHAPES_CMS_URL}/testimonials`);
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -28,7 +22,7 @@ async function getTestimonialsData() {
 
 const Testimonial = async () => {
   const testimonialsData = await getTestimonialsData();
- 
+
   return (
     <Fragment>
       <Inner backgroundColor="#EA2127" />

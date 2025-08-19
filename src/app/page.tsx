@@ -14,42 +14,15 @@ import MultiLevelImageWithText from "@/components/v2Sections/MultiLevelImageWith
 import EnquiryForm from "@/components/v2Sections/contactSection";
 import StickyScrollText from "@/components/AnimatedComponents/StuckTextAnimation";
 
-async function HomeSectionDataApi() {
-  const res = await fetch(`${SHAPES_CMS_URL}Homepage`, {
-    headers: {
-      "Content-Type": "application/json",
-      Origin: "https://shapesproduct.netlify.app/",
-    },
-    next: { revalidate: 86400 },
-  });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch exhibition data");
-  }
 
-  const data = await res.json();
-  return data?.data?.[0] || null;
-}
-
-async function clientSpeakData() {
-  const res = await fetch(`${SHAPES_CMS_URL}Clientspeaks`, {
-    headers: {
-      "Content-Type": "application/json",
-      Origin: "https://shapesproduct.netlify.app/",
-    },
-    next: { revalidate: 86400 },
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch exhibition data");
-  }
-
-  const data = await res.json();
-  return data?.data?.[0] || null;
-}
 
 export default async function Home() {
-  const HomeSectionData = await HomeSectionDataApi();
+  const HomeSectionData: { content?: { topbanner?: any } } = {
+    content: {
+      topbanner: undefined, // Replace 'undefined' with actual data if available
+    },
+  };
 
   return (
     <>

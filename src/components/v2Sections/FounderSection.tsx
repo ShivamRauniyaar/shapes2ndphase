@@ -87,6 +87,18 @@ const FounderSection = () => {
           </div>
         </div>
       </div>
+
+      <div
+        style={{
+          backgroundImage: `url(/images/newimages/wholeteam.png)`,
+          width: "100%",
+          height: "529px",
+          backgroundSize: "auto",
+          backgroundPosition: "center",
+          marginTop: "5rem",
+          backgroundRepeat: "no-repeat",
+        }}
+      ></div>
     </Fragment>
   );
 };

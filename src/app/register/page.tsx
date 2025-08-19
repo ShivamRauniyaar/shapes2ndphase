@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import { useRouter } from "next/navigation";
+import { json } from "stream/consumers";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -23,18 +24,12 @@ const Register = () => {
     try {
       const payload = { email: formData.username };
 
-      const res = await fetch(
-        `https://viewer.ecollat.in/api/public/auth/pusersignup
-
-
-`,
-        {
-          method: "POST",
-          cache: "no-store",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }
-      );
+      const res =  {
+        ok: true,
+        json: async () => ({
+          message: "OTP sent successfully",
+        }),
+      };
 
       if (res.ok) {
         alert("OTP sent to your email!");
@@ -62,15 +57,12 @@ const Register = () => {
         emailOtp: Number(otp),
       };
 
-      const res = await fetch(
-        `https://viewer.ecollat.in/api/public/auth/verify-otp`,
-        {
-          method: "POST",
-          cache: "no-store",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }
-      );
+      const res =  {
+        ok: true, 
+        json: async () => ({
+          accessToken: "sampleAccessToken"
+        })
+      };
 
       const text = await res.json();
       if (text?.accessToken) {

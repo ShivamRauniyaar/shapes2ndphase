@@ -8,13 +8,17 @@ import { SHAPES_CMS_URL } from "../../../Constant";
 
 async function getOurTeamsData() {
   try {
-    const res = await fetch(`${SHAPES_CMS_URL}ourteams`, {
-      headers: {
-        "Content-Type": "application/json",
-        Origin: "https://shapesproduct.netlify.app/",
-      },
-      next: { revalidate: 86400 },
-    });
+    const res = { 
+      ok: true, 
+      json: async () => ({ 
+        data: [{
+          content: {
+            heading: "Our Team",
+            teams: []
+          }
+        }] 
+      })
+    };
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");

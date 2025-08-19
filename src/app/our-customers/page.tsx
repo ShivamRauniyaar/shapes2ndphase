@@ -7,13 +7,35 @@ import { SHAPES_CMS_URL } from "../../../Constant";
 
 async function getOurCustomerData() {
   try {
-    const res = await fetch(`${SHAPES_CMS_URL}ourcustomers`, {
-      headers: {
-        "Content-Type": "application/json",
-        Origin: "https://shapesproduct.netlify.app/",
-      },
-      next: { revalidate: 86400 },
-    });
+    // Dummy data instead of API call
+    const res = {
+      ok: true,
+      json: async () => ({
+      data: [
+        {
+        content: {
+          title: "Our Customers",
+          customers: [
+          {
+            title: "Tech Companies",
+            images: [
+            { filePath: "/images/customer1.png" },
+            { filePath: "/images/customer2.png" },
+            ],
+          },
+          {
+            title: "Retail Brands",
+            images: [
+            { filePath: "/images/customer3.png" },
+            { filePath: "/images/customer4.png" },
+            ],
+          },
+          ],
+        },
+        },
+      ],
+      }),
+    };
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");

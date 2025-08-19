@@ -3,17 +3,33 @@ import * as Icon from "@phosphor-icons/react/dist/ssr";
 import Banner from "@/components/Home1/Banner";
 import Inner from "@/components/PageTransition/inner";
 import { SHAPES_CMS_URL } from "../../../Constant";
+import { json } from "stream/consumers";
 
 async function getDirectorMessage() {
   try {
-    const res = await fetch(`${SHAPES_CMS_URL}OurStory`, {
-      headers: {
-        "Content-Type": "application/json",
-        Origin: "https://shapesproduct.netlify.app/",
-      },
-      next: { revalidate: 86400 },
-    });
-
+    const res = { 
+      ok: true, 
+      json: async () => ({
+        data: [
+          {
+            title: "Director's Message",
+            description: "Welcome to our story!",
+            content: {
+              heading: "Our Story",
+              story: [
+                {
+                  name: "Director Name",
+                  image: "/path/to/image.jpg",
+                  heading: "Director's Heading",
+                  alignment: true,
+                  discription: "Director's description"
+                }
+              ]
+            }
+          }
+        ]
+      })
+    };
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -63,7 +79,11 @@ export default async function OurStory() {
       )}
 
       {ourStoryData?.content?.story && (
-        <Banner Padding={""} Gap={""} Data={ourStoryData?.content?.story?.[0]} />
+        <Banner
+          Padding={""}
+          Gap={""}
+          Data={ourStoryData?.content?.story?.[0]}
+        />
       )}
     </main>
   );

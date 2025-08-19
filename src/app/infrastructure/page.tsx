@@ -5,33 +5,26 @@ import Link from "next/link";
 import Inner from "@/components/PageTransition/inner";
 import { SHAPES_CMS_URL } from "../../../Constant";
 
-async function infraStructureData() {
-  try {
-    const res = await fetch(
-      `${SHAPES_CMS_URL}ourinfrastructure`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Origin: "https://shapesproduct.netlify.app/",
-        },
-        next: { revalidate: 86400 }, // ISR-like behavior with 24-hour refresh
-      }
-    );
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const data = await res.json();
-    return data?.data?.[0] || null;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-}
 
 const Infrastructure = async () => {
-  const InfraData = await infraStructureData();
+  const InfraData: {
+    content?: {
+      heading?: string;
+      infra?: Array<{
+        leftalign?: boolean;
+        title?: string;
+        description?: string;
+        details?: Array<{
+          value?: string | number;
+          title?: string;
+        }>;
+        images?: Array<{
+          filePath: string;
+        }>;
+      }>;
+    };
+  } = {};
 
 
   return (

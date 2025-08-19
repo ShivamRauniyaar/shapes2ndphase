@@ -36,7 +36,11 @@ const OrderHistory: React.FC<TabContent> = ({ activeTab, setOpenDetail }) => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await Axios.get(`${API_URL}/api/public/user/listoforder`);
+        const res = {
+          data: {
+            data: [],
+          },
+        };
 
         var data = res.data.data.map((item: any) => {
           var cartItem = JSON.parse(item.cartItem);
