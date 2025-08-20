@@ -33,6 +33,34 @@ const rightSectionData = [
   },
 ];
 
+const stats = [
+  {
+    number: "1000+",
+    text: (
+      <span>
+        luxury hospitiality
+        <br /> brand's trust{" "}
+      </span>
+    ),
+  },
+  {
+    number: "25+",
+    text: (
+      <span>
+        countries <br /> spanning
+      </span>
+    ),
+  },
+  {
+    number: "100+",
+    text: (
+      <span>
+        cities in india <br /> spanning
+      </span>
+    ),
+  },
+];
+
 gsap.registerPlugin(ScrollTrigger);
 
 interface StickyControlContent {
@@ -46,6 +74,7 @@ interface StickyControlContent {
       title?: string;
       description?: string;
     }>;
+    statsData?: any;
   };
 }
 
@@ -56,6 +85,7 @@ const predefinedData = {
     "Designed to bring consistency, elegance, and elevated presentation to every space withing your property.",
   isStats: true,
   rightPartData: rightSectionData,
+  statsData: stats,
 };
 const StickyScrollText: React.FC<StickyControlContent> = ({
   Data = predefinedData,
@@ -79,9 +109,8 @@ const StickyScrollText: React.FC<StickyControlContent> = ({
     return () => ctx.revert();
   }, []);
 
-
   return (
-    <div className="container flex gap-2">
+    <div className="container flex gap-2 mt-8">
       <div className="w-[50%]">
         {" "}
         <div ref={containerRef} className="relative h-[100vh] bg-gray-100">
@@ -97,7 +126,7 @@ const StickyScrollText: React.FC<StickyControlContent> = ({
           </div>
           {Data?.isStats && (
             <div className="text-black absolute bottom-0">
-              <StatsCircles />{" "}
+              <StatsCircles statsData={Data?.statsData} />{" "}
             </div>
           )}
         </div>

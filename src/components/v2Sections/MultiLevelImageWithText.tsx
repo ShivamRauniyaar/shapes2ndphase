@@ -31,7 +31,7 @@ const MultiLevelImageWithText = () => {
     <Fragment>
       <div className="flex justify-between items-center container">
         <div className="text-black w-[50%]">
-          <h3>
+          <h3 className="hierarchy_image_heading">
             Leading beyond the
             <br />
             ordinary
@@ -48,10 +48,12 @@ const MultiLevelImageWithText = () => {
               key={idx}
               className={`flex flex-col items-start ${item.offset}`}
             >
-              <h4 className="text-lg font-semibold mb-2 text-black">
+              <h5 className="text-lg font-semibold mb-2 text-black">
                 {item.title}
-              </h4>
-              <p className="stats_description mt-[24px] mb-[40px]">{item.description}</p>
+              </h5>
+              <p className="stats_description mt-[24px] mb-[40px]">
+                {item.description}
+              </p>
               <div className="w-full h-auto">
                 <Image
                   src={item.image}

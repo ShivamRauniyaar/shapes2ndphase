@@ -14,9 +14,6 @@ import MultiLevelImageWithText from "@/components/v2Sections/MultiLevelImageWith
 import EnquiryForm from "@/components/v2Sections/contactSection";
 import StickyScrollText from "@/components/AnimatedComponents/StuckTextAnimation";
 
-
-
-
 export default async function Home() {
   const HomeSectionData: { content?: { topbanner?: any } } = {
     content: {
@@ -44,7 +41,70 @@ export default async function Home() {
 
       <ParallaxImage />
 
-      <StickyScrollText />
+      <StickyScrollText
+        Data={{
+          header1: "Designed to Shine",
+          header2: "Crafted to Endure",
+          description:
+            "A perfect harmony of visual elegance and lasting strength, our cutlery is made to stand out in presentation and perform flawlessly over time.",
+          isStats: true,
+          rightPartData: [
+            {
+              id: 1,
+              title: "Signature Designs for Signature Experience",
+              description:
+                "A curated collection that complements modern and heritage dining environments with a premium, timeless look",
+            },
+            {
+              id: 2,
+              title: "Finishes That Speak Sophistication",
+              description:
+                "Choose from mirror, brushed, or satin finishes-each crafted to enhace the tactile and visual appeal of your table setting",
+            },
+            {
+              id: 3,
+              title: "Durability That Preserves Elegance",
+              description:
+                "Corrosion-proof, and dishwasher-safe-perfect for high-frequency, luxury hospitality use.",
+            },
+            {
+              id: 4,
+              title: "Custom Branding & Bespoke Collection",
+              description:
+                "Personalization options for hospitality clients who want their dining identity emebedded in every experience",
+            },
+          ],
+          statsData: [
+            {
+              number: "2m+",
+              text: (
+                <span>
+                  cutlery delivered
+                  <br /> annually{" "}
+                </span>
+              ),
+            },
+            {
+              number: "35+",
+              text: (
+                <span>
+                  years of
+                  <br /> manufacturing{" "}
+                </span>
+              ),
+            },
+            {
+              number: "100m+",
+              text: (
+                <span>
+                  cutlery supplied
+                  <br /> till date{" "}
+                </span>
+              ),
+            },
+          ],
+        }}
+      />
 
       <ScrollAnimationComponent>
         <ServicesSection />

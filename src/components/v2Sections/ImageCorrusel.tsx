@@ -16,7 +16,7 @@ interface ServicesSectionProps {
 }
 
 const ServicesSection: React.FC<ServicesSectionProps> = ({
-  header1 = "Where we excel—and",
+  header1 = "Where we excel-and",
   header2 = "help you succeed",
   description = "Our products are supplied to numerous 4- and 5-star Hotels, Restaurants, Cafes, Bars, Banquets and Catering services.",
   data,
@@ -71,7 +71,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2>
+          <h2 className="image_corrousel_heading mb-2">
             {header1}
             <br />
             {header2}
@@ -115,7 +115,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
 
               {/* Content Overlay */}
               <div className="absolute inset-0 flex flex-col justify-end p-8">
-                <h3
+                <h5
                   className={`text-2xl font-light text-white mb-4 transition-transform duration-300 ease-out ${
                     hoveredCard === service.id
                       ? "transform translate-y-0"
@@ -123,13 +123,11 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
                   }`}
                 >
                   {service.title}
-                </h3>
+                </h5>
 
                 <button
                   className={`
-                    inline-flex items-center justify-center px-6 py-3 border-2 border-white 
-                    text-white text-sm font-medium tracking-wider uppercase transition-all duration-300 
-                    ease-out bg-transparent hover:bg-white hover:text-gray-800 max-w-fit
+                    image_corrousel_transparent_button
                     ${hoveredCard === service.id ? "opacity-100" : "opacity-90"}
                   `}
                 >

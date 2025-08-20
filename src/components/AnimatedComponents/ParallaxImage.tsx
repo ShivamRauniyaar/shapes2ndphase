@@ -26,20 +26,31 @@ const ParallaxImage: React.FC<ParallaxContent> = ({ image }) => {
     tl.to(bgRef.current, { y: -100 }, 0);
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
   const imageSrc = image ?? "/images/newimages/golden-cutlery-plate-dark.jpg";
 
   return (
-    <div ref={containerRef} className="relative h-[100vh] overflow-hidden">
-      <img
+    <div
+      ref={containerRef}
+      className="relative h-[100vh] overflow-hidden"
+      style={{
+        backgroundImage: `url(${imageSrc})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
+        width: "100%",
+      }}
+    >
+      {/* <img
         ref={bgRef}
         src={imageSrc}
         alt="background"
         className="absolute w-full h-full object-cover"
-      />
+      /> */}
     </div>
   );
 };
