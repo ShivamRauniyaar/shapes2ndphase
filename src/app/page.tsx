@@ -1,7 +1,6 @@
 import React from "react";
 import SliderOne from "@/components/Slider/SliderOne";
 import Inner from "@/components/PageTransition/inner";
-import { SHAPES_CMS_URL } from "../../Constant";
 import V2BreadCrumb from "@/components/v2Sections/BreadCrumb";
 import ExploreRangeCmp from "@/components/v2Sections/ExploreRangeCmp";
 import blogData from "@/data/Blog.json";
