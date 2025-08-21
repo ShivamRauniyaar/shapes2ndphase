@@ -10,7 +10,7 @@ const Register = () => {
   });
   const [otp, setOtp] = useState("");
   const [step, setStep] = useState<"register" | "verify">("register");
-  const router = useRouter()
+  const router = useRouter();
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,7 +23,7 @@ const Register = () => {
     try {
       const payload = { email: formData.username };
 
-      const res =  {
+      const res = {
         ok: true,
         json: async () => ({
           message: "OTP sent successfully",
@@ -56,17 +56,17 @@ const Register = () => {
         emailOtp: Number(otp),
       };
 
-      const res =  {
-        ok: true, 
+      const res = {
+        ok: true,
         json: async () => ({
-          accessToken: "sampleAccessToken"
-        })
+          accessToken: "sampleAccessToken",
+        }),
       };
 
       const text = await res.json();
       if (text?.accessToken) {
         localStorage.setItem("shapesAccessToken", text?.accessToken);
-        router.push('/my-account');
+        router.push("/my-account");
       }
 
       // const data = await res.json();
