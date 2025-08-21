@@ -16,9 +16,43 @@ import StickyScrollText from "@/components/AnimatedComponents/StuckTextAnimation
 export default async function Home() {
   const HomeSectionData: { content?: { topbanner?: any } } = {
     content: {
-      topbanner: undefined, // Replace 'undefined' with actual data if available
+      topbanner: [
+        {
+          id: 1,
+          filePath: "/images/newimages/containerfram.svg",
+        },
+        {
+          id: 2,
+          filePath: "/images/newimages/containerfram.svg",
+        },
+        {
+          id: 3,
+          filePath: "/images/newimages/containerfram.svg",
+        },
+        {
+          id: 4,
+          filePath: "/images/newimages/containerfram.svg",
+        },
+      ], // Replace 'undefined' with actual data if available
     },
   };
+
+  // {
+  //       id: 1,
+  //       filePath: "/images/newimages/hometopbanner1.jpg",
+  //     },
+  //     {
+  //       id: 2,
+  //       filePath: "/images/newimages/hometopbanner2.jpg",
+  //     },
+  //     {
+  //       id: 3,
+  //       filePath: "/images/newimages/hometopbanner3.jpg",
+  //     },
+  //     {
+  //       id: 4,
+  //       filePath: "/images/newimages/hometopbanner4.jpg",
+  //     },
 
   return (
     <>
