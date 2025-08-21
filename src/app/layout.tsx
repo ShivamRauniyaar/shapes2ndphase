@@ -58,7 +58,6 @@ export default function RootLayout({
           </div>
           <ToastContainer />
 
-          {/* <PageTransitionWrapper>{children}</PageTransitionWrapper> */}
           {children}
           <ModalCart serverTimeLeft={serverTimeLeft} />
           <ModalWishlist />

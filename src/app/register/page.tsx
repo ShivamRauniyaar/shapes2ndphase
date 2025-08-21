@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import { useRouter } from "next/navigation";
-import { json } from "stream/consumers";
 
 const Register = () => {
   const [formData, setFormData] = useState({
