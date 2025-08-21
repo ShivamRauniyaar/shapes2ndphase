@@ -293,5 +293,18 @@ p {
   font-family: var(--font-manrope);
   font-weight: 500;
   font-size: 16px;
-  color: #0a0703;
+  color: #140303;
+}
+
+.header_design:hover {
+  color: #eb2226;
+}
+.header_design:hover .moreHeaderDataSvgClass {
+  color: #eb2226;
+
+  stroke: #eb2226;
+}
+
+.moreHeaderDataSvgClass {
+  stroke: #0a0703;
 }

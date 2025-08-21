@@ -786,7 +786,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
       <div
         className={`header-menu style-one ${
           fixedHeader ? "fixed" : "absolute"
-        } top-0 left-0 right-0 w-full md:h-[112px] h-[56px] ${props}`}
+        } top-0 left-0 right-0 w-full md:max-h-[112px] md:h-[112px] h-[56px] ${props}`}
       >
         <div className="container mx-auto h-full">
           <div className="header-main flex justify-between h-full">
@@ -798,11 +798,11 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
             </div>
             <div className=" flex justify-between w-[100%] items-center gap-16">
               <div className="flex items-center max-lg:absolute max-lg:left-1/2 max-lg:-translate-x-1/2">
-                <div className="heading4 flex gap-8 items-center">
+                <div className="heading4 flex gap-[5rem] items-center">
                   <Image
                     src={"/images/homepage/ShapesLogo.png"}
                     alt="some"
-                    className="h-[50px]"
+                    className="h-[64px]"
                     height={200}
                     width={150}
                   />
@@ -814,7 +814,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                             <li className="h-full relative" key={index}>
                               <Link
                                 href={item?.Url}
-                                className={`text-button-uppercase duration-300 h-full flex items-center justify-center header_design ${
+                                className={` duration-300 h-full flex items-center justify-center header_design ${
                                   pathname.includes(item?.Url) ? "active" : ""
                                 }`}
                               >
@@ -825,7 +825,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                             <li className="h-full relative" key={index}>
                               <Link
                                 href={item?.Url}
-                                className={`text-button-uppercase duration-300 h-full flex items-center justify-center gap-1 header_design ${
+                                className={` duration-300 h-full flex items-center justify-center gap-1 header_design ${
                                   pathname === item?.Url ? "active" : ""
                                 }`}
                               >
@@ -836,11 +836,11 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                             <li className="h-full" key={index}>
                               <Link
                                 href="#"
-                                className={`text-button-uppercase duration-300 h-full flex items-center justify-center header_design ${
+                                className={` duration-300 h-full flex items-center gap-2 justify-center header_design ${
                                   pathname.includes("/shop/") ? "active" : ""
                                 }`}
                               >
-                                {item?.title}
+                                {item?.title} {CommonSvg.moreHeaderDataSvg}
                               </Link>
                               <div className="mega-menu absolute top-[112px] left-0 bg-white w-screen">
                                 <div className="container">
@@ -856,7 +856,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                                                   className="nav-item"
                                                   key={index}
                                                 >
-                                                  <div className="text-button-uppercase header_design pb-2">
+                                                  <div className=" header_design pb-2">
                                                     {_item?.title}
                                                   </div>
                                                 </Link>
@@ -902,7 +902,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                           <li className="h-full relative" key={index}>
                             <Link
                               href={item?.Url}
-                              className={`text-button-uppercase duration-300 h-full flex items-center justify-center header_design ${
+                              className={` duration-300 h-full flex items-center justify-center header_design ${
                                 pathname.includes(item?.Url) ? "active" : ""
                               }`}
                             >
@@ -913,7 +913,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                           <li className="h-full relative" key={index}>
                             <Link
                               href={item?.Url}
-                              className={`text-button-uppercase duration-300 h-full flex items-center justify-center header_design gap-1 ${
+                              className={` duration-300 h-full flex items-center justify-center header_design gap-1 ${
                                 pathname === item?.Url ? "active" : ""
                               }`}
                             >
@@ -944,7 +944,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                           <li className="h-full" key={index}>
                             <Link
                               href={item?.Url}
-                              className={`text-button-uppercase duration-300 h-full flex items-center justify-center header_design ${
+                              className={` duration-300 h-full flex items-center justify-center header_design ${
                                 pathname.includes("/shop/") ? "active" : ""
                               }`}
                             >
@@ -962,7 +962,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                                               className="nav-item"
                                               key={index}
                                             >
-                                              <div className="text-button-uppercase pb-2 header_design">
+                                              <div className=" pb-2 header_design">
                                                 {_item?.title}
                                               </div>
                                               {/* <ul>
@@ -1166,7 +1166,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                                         `cat-${catIndex}`
                                       }
                                     >
-                                      <div className="text-button-uppercase pb-1 header_design">
+                                      <div className=" pb-1 header_design">
                                         {catItem?.categoryName}
                                       </div>
                                       <ul>

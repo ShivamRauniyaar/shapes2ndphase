@@ -86,11 +86,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
           {services.map((service) => (
             <div
               key={service.id}
-              className={`relative h-[400px]  overflow-hidden cursor-pointer shadow-lg transition-all duration-300 ease-out ${
-                hoveredCard === service.id
-                  ? "transform -translate-y-2 shadow-2xl"
-                  : "hover:shadow-xl"
-              }`}
+              className={`relative h-[400px]  overflow-hidden cursor-pointer shadow-lg transition-all duration-300 ease-out `}
               onMouseEnter={() => handleCardHover(service.id)}
               onMouseLeave={handleCardLeave}
             >
@@ -116,11 +112,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
               {/* Content Overlay */}
               <div className="absolute inset-0 flex flex-col justify-end p-8">
                 <h5
-                  className={`text-2xl font-light text-white mb-4 transition-transform duration-300 ease-out ${
-                    hoveredCard === service.id
-                      ? "transform translate-y-0"
-                      : "transform translate-y-2"
-                  }`}
+                  className={` text-white  `}
                 >
                   {service.title}
                 </h5>
