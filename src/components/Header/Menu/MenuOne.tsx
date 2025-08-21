@@ -786,19 +786,37 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
       <div
         className={`header-menu style-one ${
           fixedHeader ? "fixed" : "absolute"
-        } top-0 left-0 right-0 w-full md:max-h-[112px] md:h-[112px] h-[56px] ${props}`}
+        } top-0 left-0 right-0 w-full md:max-h-[112px] md:h-[112px] h-[64px] ${props}`}
       >
         <div className="container mx-auto h-full">
-          <div className="header-main flex justify-between h-full">
+          <div className="lg:hidden flex justify-between items-center text-center h-full ">
+            <div>
+              {" "}
+              <Image
+                src={"/images/homepage/ShapesLogo.png"}
+                alt="some"
+                className="h-[44px]"
+                height={200}
+                width={150}
+              />
+            </div>
             <div
               className="menu-mobile-icon lg:hidden flex items-center"
               onClick={handleMenuMobile}
             >
-              <i className="icon-category text-2xl"></i>
+              {CommonSvg.mobiileHamburgerSvg}
             </div>
-            <div className=" flex justify-between w-[100%] items-center gap-16">
+          </div>
+          <div className="header-main flex flex-row-reverse justify-between h-full max-lg:hidden">
+            <div
+              className="menu-mobile-icon lg:hidden flex items-center"
+              onClick={handleMenuMobile}
+            >
+              {CommonSvg.mobiileHamburgerSvg}
+            </div>
+            <div className="flex justify-between w-[100%] items-center gap-16">
               <div className="flex items-center max-lg:absolute max-lg:left-1/2 max-lg:-translate-x-1/2">
-                <div className="heading4 flex gap-[5rem] items-center">
+                <div className="heading4 flex gap-[5rem] items-center ">
                   <Image
                     src={"/images/homepage/ShapesLogo.png"}
                     alt="some"
@@ -1032,20 +1050,20 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
           <div className="container h-full">
             <div className="menu-main h-full overflow-hidden">
               <div className="heading py-2 relative flex items-center justify-center">
-                <div
-                  className="close-menu-mobile-btn absolute left-0 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-surface flex items-center justify-center"
-                  onClick={handleMenuMobile}
-                >
-                  <Icon.X size={14} />
-                </div>
                 <Link
                   href={"/"}
                   className="logo text-3xl font-semibold text-center"
                 >
                   Shapes
                 </Link>
+                <div
+                  className="close-menu-mobile-btn absolute left-0 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-surface flex items-center justify-center"
+                  onClick={handleMenuMobile}
+                >
+                  <Icon.X size={14} />
+                </div>
               </div>
-              <div className="form-search relative mt-2">
+              {/* <div className="form-search relative mt-2">
                 <Icon.MagnifyingGlass
                   size={20}
                   className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer"
@@ -1055,7 +1073,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                   placeholder="What are you looking for?"
                   className=" h-12 rounded-lg border border-line text-sm w-full pl-10 pr-4"
                 />
-              </div>
+              </div> */}
               <div className="list-nav mt-6">
                 <ul>
                   {hardcodeDynamicData?.[0]?.content?.map(
