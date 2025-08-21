@@ -37,23 +37,6 @@ export default async function Home() {
     },
   };
 
-  // {
-  //       id: 1,
-  //       filePath: "/images/newimages/hometopbanner1.jpg",
-  //     },
-  //     {
-  //       id: 2,
-  //       filePath: "/images/newimages/hometopbanner2.jpg",
-  //     },
-  //     {
-  //       id: 3,
-  //       filePath: "/images/newimages/hometopbanner3.jpg",
-  //     },
-  //     {
-  //       id: 4,
-  //       filePath: "/images/newimages/hometopbanner4.jpg",
-  //     },
-
   return (
     <>
       <Inner backgroundColor="#EA2127" />

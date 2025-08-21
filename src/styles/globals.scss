@@ -17,6 +17,13 @@
   --surface2: rgba(255, 255, 255, 0.2);
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&display=swap");
+
+:root {
+  --font-gelasio: "Gelasio", "serif";
+  --font-manrope: "Manrope", "sans-serif";
+}
+
 /* Reset */
 * {
   padding: 0;
@@ -532,4 +539,15 @@ body {
   background: black;
   transform: translateY(40px);
   filter: blur(12px);
+}
+
+h2 {
+  font-size: 64px !important;
+  font-weight: 400 !important;
+  color: #0a0703;
+  line-height: initial !important;
+  font-family: var(--font-gelasio);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

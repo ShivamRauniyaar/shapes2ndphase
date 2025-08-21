@@ -12,7 +12,12 @@ import MenuServer from "@/components/Header/MenuServer/MenuServer";
 import Footer from "@/components/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import { DeleteModal } from "@/components/Modal";
+import { Gelasio } from "next/font/google";
 
+const gelasio = Gelasio({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // choose the weights you need
+});
 const serverTimeLeft: CountdownTimeType = countdownTime();
 
 export const metadata: Metadata = {
@@ -45,7 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <GlobalProvider>
-      <html lang="en">
+      <html lang="en" className={gelasio.className}>
         <body>
           {/* <TopNavOne /> */}
           <div id="header" className="relative w-full">

@@ -27,14 +27,12 @@
 @tailwind utilities;
 
 // common layout designers
-
 @import url("https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&display=swap");
 
 :root {
   --font-gelasio: "Gelasio", "serif";
   --font-manrope: "Manrope", "sans-serif";
 }
-
 body {
   font-family: var(--font-gelasio);
 }
@@ -291,8 +289,4 @@ p {
   font-weight: 500;
   font-size: 20px;
   color: #010b13;
-}
-
-.parent_banner_text_border {
-  border-right: 1px solid #0a0703;
 }

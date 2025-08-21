@@ -110,7 +110,7 @@ const StickyScrollText: React.FC<StickyControlContent> = ({
   }, []);
 
   return (
-    <div className="container flex gap-2 mt-8">
+    <div className="container flex gap-2 mt-[7rem]">
       <div className="w-[50%]">
         {" "}
         <div ref={containerRef} className="relative h-[100vh] bg-gray-100">
