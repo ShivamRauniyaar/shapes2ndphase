@@ -31,7 +31,7 @@ const getMenuData = async () => {
 const MenuServer = async () => {
   const menuData = await getMenuData();
 
-  return <MenuOne props="bg-white" menuDataHeader={menuData} />;
+  return <MenuOne props="bg-[#fcfaf7]" menuDataHeader={menuData} />;
 };
 
 export default MenuServer;

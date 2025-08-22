@@ -860,7 +860,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                               >
                                 {item?.title} {CommonSvg.moreHeaderDataSvg}
                               </Link>
-                              <div className="mega-menu absolute top-[112px] left-0 bg-white w-screen">
+                              <div className="mega-menu absolute top-[112px] left-0 bg-[#fcfaf7] w-screen">
                                 <div className="container">
                                   <div className=" justify-between py-8">
                                     <div className="grid grid-cols-4">
@@ -968,7 +968,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                             >
                               {item?.title}
                             </Link>
-                            <div className="mega-menu absolute top-[112px] left-0 bg-white w-screen">
+                            <div className="mega-menu absolute top-[112px] left-0 bg-[#fcfaf7] w-screen">
                               <div className="container">
                                 <div className=" justify-between py-8">
                                   <div className="grid grid-cols-4">
