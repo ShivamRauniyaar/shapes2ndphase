@@ -140,7 +140,6 @@ p {
 }
 
 .secondary_button {
-  background-color: #ffffff;
   padding: 13px 32px;
   font-size: 16px;
   font-weight: 500;
@@ -308,4 +307,12 @@ p {
 
 .moreHeaderDataSvgClass {
   stroke: #0a0703;
+}
+
+.hover_aligner {
+  transition: transform 0.3s ease;
+}
+
+.hover_aligner:hover {
+  transform: translateX(4px); /* shift 4px to the right */
 }

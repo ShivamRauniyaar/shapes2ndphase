@@ -17,33 +17,8 @@ const rangeData = [
     id: 4,
     title: "Product Name",
   },
-  {
-    id: 5,
-    title: "Product Name",
-  },
-  {
-    id: 6,
-    title: "Product Name",
-  },
-  {
-    id: 7,
-    title: "Product Name",
-  },
-  {
-    id: 8,
-    title: "Product Name",
-  },
-  {
-    id: 9,
-    title: "Product Name",
-  },
-  {
-    id: 10,
-    title: "Product Name",
-  },
 ];
 
-//containerfram.svg
 
 const ExploreRangeCmp = () => {
   return (
@@ -57,14 +32,22 @@ const ExploreRangeCmp = () => {
         {rangeData?.map((item, index) => (
           <div
             key={index}
-            className="container_overlay_section"
+            className="container_overlay_section group relative"
             style={{
               backgroundImage: `url(/images/newimages/containerfram.svg)`,
-              backgroundSize: "auto", // Changed to 'contain'
-              backgroundPosition: "center", // Center the image
+              backgroundSize: "auto",
+              backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
-          ></div>
+          >
+            {/* Text at the bottom */}
+            <div className="absolute bottom-0 left-0 w-full text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="flex justify-between bg-white p-2 items-center">
+                <div className="blog_heading"> {item.title}</div>
+                <div className="secondary_button">Enquire Now</div>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </Fragment>

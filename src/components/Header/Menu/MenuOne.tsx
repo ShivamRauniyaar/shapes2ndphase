@@ -874,7 +874,7 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
                                                   className="nav-item"
                                                   key={index}
                                                 >
-                                                  <div className=" header_design pb-2">
+                                                  <div className=" header_design pb-2 hover_aligner">
                                                     {_item?.title}
                                                   </div>
                                                 </Link>
@@ -1049,20 +1049,20 @@ const MenuOne: React.FC<Props> = ({ props, menuDataHeader }) => {
         <div className="menu-container bg-white h-full">
           <div className="container h-full">
             <div className="menu-main h-full overflow-hidden">
-              <div className="heading py-2 relative flex items-center justify-center">
-                <Link
-                  href={"/"}
-                  className="logo text-3xl font-semibold text-center"
-                >
-                  Shapes
-                </Link>
-                <div
-                  className="close-menu-mobile-btn absolute left-0 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-surface flex items-center justify-center"
-                  onClick={handleMenuMobile}
-                >
-                  <Icon.X size={14} />
+              <div className="flex justify-between items-center h-[64px]">
+                <div>
+                  {" "}
+                  <Image
+                    src={"/images/homepage/ShapesLogo.png"}
+                    alt="some"
+                    className="h-[44px]"
+                    height={200}
+                    width={150}
+                  />
                 </div>
+                <div onClick={handleMenuMobile}>{CommonSvg?.closeIconSvg}</div>
               </div>
+
               {/* <div className="form-search relative mt-2">
                 <Icon.MagnifyingGlass
                   size={20}

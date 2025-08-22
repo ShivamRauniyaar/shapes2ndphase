@@ -110,7 +110,7 @@ const SliderOne: React.FC<{ SliderData: any }> = ({ SliderData }) => {
         </div>
 
         {/* Custom Pagination at Bottom Right */}
-        <div className="absolute bottom-40 right-40 z-10">
+        <div className="absolute bottom-40 right-[16rem] z-10">
           <div className="flex justify-between mb-4">
             <div>
               <div className="parent_banner_heading">
