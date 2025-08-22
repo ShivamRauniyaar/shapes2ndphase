@@ -76,14 +76,14 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
             <br />
             {header2}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[16px] text-gray-600 max-w-2xl mx-auto leading-relaxed">
             {description}
           </p>
         </div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <div
               key={service.id}
               className={`relative h-[400px]  overflow-hidden cursor-pointer shadow-lg transition-all duration-300 ease-out `}

@@ -19,7 +19,6 @@ const rangeData = [
   },
 ];
 
-
 const ExploreRangeCmp = () => {
   return (
     <Fragment>
@@ -28,7 +27,7 @@ const ExploreRangeCmp = () => {
         <button className="secondary_button">Download Catalog</button>
         <button className="primary_button">Enquire Now</button>
       </div>
-      <div className="flex w-[100vw] gap-2 overflow-auto mt-[24px]">
+      <div className="flex w-[100vw] gap-2 overflow-auto mt-[40px]">
         {rangeData?.map((item, index) => (
           <div
             key={index}

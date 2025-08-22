@@ -121,7 +121,7 @@ const StickyScrollText: React.FC<StickyControlContent> = ({
                 <br />
                 {Data.header2}
               </h1>
-              <p className="mt-[40px]">{Data.description}</p>
+              <p className="mt-[40px] w-[82%]">{Data.description}</p>
             </div>
           </div>
           {Data?.isStats && (
@@ -134,7 +134,7 @@ const StickyScrollText: React.FC<StickyControlContent> = ({
 
       <div className="w-[50%] grid gap-[5rem]">
         {Data?.rightPartData?.map((item, index) => (
-          <div className="white_border pb-[80px]" key={index}>
+          <div className="white_border pb-[80px] h-fit" key={index}>
             <h5>{item.title}</h5>
             <p className="mt-[1rem] text-[16px]">{item?.description}</p>
           </div>
