@@ -42,7 +42,7 @@ const ExploreRangeCmp = () => {
             {/* Text at the bottom */}
             <div className="absolute bottom-0 left-0 w-full text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="flex justify-between bg-white p-2 items-center">
-                <div className="blog_heading"> {item.title}</div>
+                <div className="blog_heading">{item.title}</div>
                 <div className="secondary_button">Enquire Now</div>
               </div>
             </div>

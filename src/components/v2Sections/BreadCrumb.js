@@ -4,10 +4,10 @@ const V2BreadCrumb = () => {
   return (
     <div className="flex justify-between">
       <div className="w-[50%]">
-        <h2 className="text-4xl font-light text-gray-900 mb-8">
+        <h2 className="">
           Creating memorable dining experiences worldwide
         </h2>
-        <button className="primary_button">Learn More</button>
+        <button className="primary_button mt-[2.5rem]">Learn More</button>
       </div>
       <div className="w-[50%]">
         <div

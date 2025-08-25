@@ -76,7 +76,7 @@ const partnerSectionData = [
 const PartnerSection = () => {
   return (
     <Fragment>
-      <h6 className="text-center mb-4">Proud Partners in Hospitality</h6>
+      <div className="partner_section_heading text-center mb-6">Proud Partners in Hospitality</div>
       <div className="grid grid-cols-7 gap-2">
         {partnerSectionData?.map((item, index) => (
           <div

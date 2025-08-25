@@ -144,7 +144,7 @@ export default async function Home() {
       <ScrollAnimationComponent>
         <div className="blog grid md:py-20 py-10">
           <div className="container">
-            <h3 className="text-center mb-[2rem]">Blogs</h3>
+            <div className=" enquiry_section_heading text-center mb-[2.5rem]">Blogs</div>
             <div className="list-blog grid lg:grid-cols-3 sm:grid-cols-2 md:gap-[42px] gap-8">
               {blogData?.slice(0, 3)?.map((item) => (
                 <BlogItem1 key={item.id} data={item} type="style-one" />

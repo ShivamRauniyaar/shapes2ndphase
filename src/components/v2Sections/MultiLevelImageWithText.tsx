@@ -48,10 +48,8 @@ const MultiLevelImageWithText = () => {
               key={idx}
               className={`flex flex-col items-start ${item.offset}`}
             >
-              <h5 className="text-lg font-semibold mb-2 text-black">
-                {item.title}
-              </h5>
-              <p className="stats_description mt-[24px] mb-[40px]">
+              <h5>{item.title}</h5>
+              <p className="stats_description mt-[16px] mb-[40px]">
                 {item.description}
               </p>
               <div className="w-full h-auto">

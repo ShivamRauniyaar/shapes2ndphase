@@ -70,8 +70,8 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
     <section className="py-20  bg-amber-50 ">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="image_corrousel_heading mb-2">
+        <div className="text-center mb-[40px]">
+          <h2 className="image_corrousel_heading mb-[24px]">
             {header1}
             <br />
             {header2}
@@ -110,12 +110,8 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
               <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/40 to-black/60" />
 
               {/* Content Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end p-8">
-                <h5
-                  className={` text-white  `}
-                >
-                  {service.title}
-                </h5>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h5 className={` text-white  mb-[16px] `}>{service.title}</h5>
 
                 <button
                   className={`

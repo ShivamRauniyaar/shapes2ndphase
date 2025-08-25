@@ -32,7 +32,7 @@ const StatsCircles = ({ statsData = stats }) => {
         {statsData.map((stat, index) => (
           <div
             key={index}
-            className="w-[170px] h-[170px] rounded-full border border-[#b9975b] bg-transparent flex flex-col justify-center items-center z-10"
+            className="w-[170px] h-[170px] min-w-[170px]  min-h-[170px] rounded-full border border-[#b9975b] bg-transparent flex flex-col justify-center items-center z-10"
           >
             <h2 className="stats_heading">{stat.number}</h2>
             <p className="text-center">{stat.text}</p>

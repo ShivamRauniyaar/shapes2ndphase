@@ -1,10 +1,15 @@
+"use client";
+import { useState } from "react";
+
 // components/EnquiryForm.tsx
 export default function EnquiryForm() {
+  const [phoneCode, setPhoneCode] = useState("+91"); // Default to US code
+
   return (
     <section className="flex flex-col md:flex-row gap-6">
       {/* Left: Form Section */}
       <div className="flex-1 flex flex-col justify-center md:w-1/2">
-        <h1 className="text-4xl font-semibold mb-10">Enquire Now</h1>
+        <div className=" enquiry_section_heading mb-[40px]">Enquire Now</div>
 
         <form className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {/* Full Name */}
@@ -54,12 +59,22 @@ export default function EnquiryForm() {
               Phone
             </label>
             <div className="flex gap-3">
-              <input
+              <select
                 id="phoneCode"
-                type="text"
-                placeholder="Code"
+                value={phoneCode}
+                onChange={(e) => setPhoneCode(e.target.value)}
                 className="w-20 form_input"
-              />
+                style={{
+                  padding: "2px 1.5rem", 
+                }}
+              >
+                <option value="+1">+1</option>
+                <option value="+44">+44</option>
+                <option value="+91">+91</option>
+                <option value="+61">+61</option>
+                <option value="+81">+81</option>
+                {/* Add more country codes as needed */}
+              </select>
               <input
                 id="phoneNumber"
                 type="tel"

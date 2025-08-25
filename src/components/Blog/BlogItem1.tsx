@@ -24,8 +24,8 @@ const BlogItem1: React.FC<BlogProps> = ({ data, type }) => {
               className="w-full"
             />
             <div className="blog_heading mt-[1rem]">{data?.title}</div>
-            <div className="mt-[1rem] flex items-center">
-              Read {CommonSvg.rightIconSvg}
+            <div className="mt-[1rem] flex items-center header_design">
+              Read <span className="rotate_deg">{CommonSvg.rightIconSvg}</span>
             </div>
           </div>
         </div>

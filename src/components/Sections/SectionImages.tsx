@@ -68,7 +68,7 @@ const SectionImages = () => {
 
       <div className="banner-block md:py-[60px] py-[32px] ">
         <div>
-          <div className="heading6 text-center mb-20 mt-10">
+          <div className="partner_section_heading mb-6">
             Proud Partners in hospitality excellence
           </div>
 
