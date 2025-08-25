@@ -49,7 +49,6 @@ export default async function ShopPage({ searchParams }: Props) {
           height: "800px",
           backgroundSize: "auto", // Changed to 'contain'
           backgroundPosition: "center", // Center the image
-          borderRadius: "12px",
           backgroundRepeat: "no-repeat",
           marginTop: "5rem",
         }}
